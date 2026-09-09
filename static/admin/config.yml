@@ -186,7 +186,7 @@ collections:
     summary: "{{title}} — {{dateLine}}"
     fields:
       - { name: slug, label: Folder name, widget: string, hint: "Must match the folder in assets/events, e.g. aug-2026" }
-      - { name: date, label: Date, widget: date, format: YYYY-MM-DD, hint: "Used to order the archive — newest first" }
+      - { name: date, label: Date, widget: datetime, type: date, format: YYYY-MM-DD, hint: "Used to order the archive — newest first" }
       - { name: title, label: Title, widget: string, hint: "Shown big, e.g. 21.08.26" }
       - { name: eyebrow, label: Small line above the title, widget: string, required: false }
       - { name: dateLine, label: Full date, widget: string, hint: "e.g. Friday 21 August 2026" }
