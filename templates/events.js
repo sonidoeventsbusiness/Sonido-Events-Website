@@ -1,5 +1,5 @@
 'use strict';
-const { esc, lines, button, layout } = require('./layout.js');
+const { esc, lines, button, layout, signupSection } = require('./layout.js');
 
 module.exports = function events({ site, content, upcoming }) {
   const page = content.events;
@@ -40,7 +40,8 @@ ${eventRows}
     <p>${esc(page.archiveCopy)}</p>
   </div>
   ${button(page.archiveButtonLabel, '/past-events/')}
-</section>`;
+</section>
+${signupSection(content.signup)}`;
 
   return layout({
     site, page, current: '/events/', body,

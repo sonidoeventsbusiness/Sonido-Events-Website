@@ -1,5 +1,5 @@
 'use strict';
-const { esc, lines, button, layout, player, tile } = require('./layout.js');
+const { esc, lines, button, layout, player, tile, signupSection } = require('./layout.js');
 
 module.exports = function home({ site, content, upcoming, nights }) {
   const page = content.home;
@@ -83,6 +83,8 @@ ${eventRows}
       ${button(page.lastNightButtonLabel, '/past-events/', { ghost: true })}
     </div>
   </section>
+
+  ${signupSection(content.signup)}
 
   <section class="section production">
     <div>

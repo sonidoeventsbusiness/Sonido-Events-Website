@@ -141,6 +141,23 @@ collections:
           - { name: nextCopy, label: "Next event block — paragraph", widget: text }
           - { name: nextButtonLabel, label: "Next event block — button text", widget: string }
 
+      - name: signup
+        label: Newsletter signup
+        file: content/signup.json
+        fields:
+          - { name: eyebrow, label: Small line above the heading, widget: string }
+          - { name: heading, label: Heading, widget: text }
+          - { name: copy, label: The pitch, widget: text }
+          - { name: nameLabel, label: "Field label — first name", widget: string }
+          - { name: emailLabel, label: "Field label — email", widget: string }
+          - { name: buttonLabel, label: Button text, widget: string }
+          - { name: smallPrint, label: Small print under the button, widget: text }
+          - { name: thanksTitle, label: "Thank-you page — browser tab title", widget: string }
+          - { name: thanksEyebrow, label: "Thank-you page — small line", widget: string }
+          - { name: thanksHeading, label: "Thank-you page — heading", widget: text }
+          - { name: thanksCopy, label: "Thank-you page — paragraph", widget: text }
+          - { name: thanksButtonLabel, label: "Thank-you page — button text", widget: string }
+
       - name: site
         label: Site-wide details
         file: content/site.json

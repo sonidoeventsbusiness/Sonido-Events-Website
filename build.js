@@ -29,6 +29,7 @@ function loadContent() {
     hire: readJson(path.join(dir, 'hire.json')),
     shop: readJson(path.join(dir, 'shop.json')),
     pastEvents: readJson(path.join(dir, 'past-events.json')),
+    signup: readJson(path.join(dir, 'signup.json')),
   };
   const upcoming = readJson(path.join(dir, 'upcoming.json'));
 
@@ -87,12 +88,14 @@ function build() {
   const hire = require('./templates/hire.js');
   const shop = require('./templates/shop.js');
   const pastEvents = require('./templates/past-events.js');
+  const thanks = require('./templates/thanks.js');
 
   const written = [];
   written.push(write('.', home({ site, content, upcoming, nights })));
   written.push(write('events', events({ site, content, upcoming })));
   written.push(write('hire', hire({ site, content })));
   written.push(write('shop', shop({ site, content })));
+  written.push(write('thanks', thanks({ site, content })));
 
   // /past-events/ shows the newest night; every night also gets its own page
   const [newest, ...older] = nightList;

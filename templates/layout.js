@@ -103,6 +103,34 @@ function tile(clip, { labelStyle = 'short' } = {}) {
 </button>`;
 }
 
+/* The mailing list block. Lives on the homepage and the events page, sharing
+   one Netlify form name so submissions collect in a single list.
+   `form-name` and the honeypot are what Netlify's form handling expects. */
+function signupSection(signup) {
+  return `<section class="section signup" id="signup">
+  <div class="signup-copy">
+    <span class="eyebrow green">${esc(signup.eyebrow)}</span>
+    <h2>${lines(signup.heading)}</h2>
+    <p>${esc(signup.copy)}</p>
+  </div>
+  <form class="signup-form" name="newsletter" method="POST" action="/thanks/"
+        data-netlify="true" data-netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="newsletter">
+    <p class="signup-gotcha"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <div class="field">
+      <label class="eyebrow" for="signup-name">${esc(signup.nameLabel)}</label>
+      <input id="signup-name" name="name" type="text" autocomplete="given-name">
+    </div>
+    <div class="field">
+      <label class="eyebrow" for="signup-email">${esc(signup.emailLabel)}</label>
+      <input id="signup-email" name="email" type="email" required autocomplete="email">
+    </div>
+    <button class="button" type="submit">${esc(signup.buttonLabel)} <span class="arrow">↗</span></button>
+    <p class="signup-small">${esc(signup.smallPrint)}</p>
+  </form>
+</section>`;
+}
+
 function layout({ site, page, current, contactHref, instaHref, instaHandle, body, playerHtml = '' }) {
   return `<!doctype html>
 <html lang="en">
@@ -133,4 +161,4 @@ ${playerHtml ? '\n' + playerHtml + '\n' : ''}
 `;
 }
 
-module.exports = { esc, lines, button, layout, player, tile };
+module.exports = { esc, lines, button, layout, player, tile, signupSection };

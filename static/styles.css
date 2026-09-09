@@ -273,3 +273,26 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   .reel-track{transform:none !important;overflow-x:auto;padding-bottom:22px}
   .reel-bar,.reel-hint{position:static;padding:0 var(--gutter);margin-top:18px}
 }
+
+/* 11. mailing list signup ---------------------------------------- */
+.signup{background:var(--bg-2);display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:start}
+.signup h2{color:var(--green)}
+.signup-copy p{font-size:18px;line-height:1.7;color:var(--muted);max-width:500px;margin:30px 0 0}
+.signup-form{padding-top:24px;display:flex;flex-direction:column;gap:26px;max-width:460px}
+.signup-form .field{display:flex;flex-direction:column;gap:10px}
+.signup-form label{color:var(--muted)}
+.signup-form input{background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--ink);
+  font:inherit;font-size:18px;padding:10px 0;transition:border-color .2s ease}
+.signup-form input::placeholder{color:#6c7166}
+.signup-form input:focus{outline:none;border-bottom-color:var(--green)}
+.signup-form input:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+.signup-form .button{align-self:start;margin-top:6px}
+.signup-small{font-size:12px;line-height:1.6;color:var(--muted);margin:0}
+/* honeypot: a real field, kept away from people and screen readers */
+.signup-gotcha{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.thanks .button{margin-top:10px}
+
+@media(max-width:900px){
+  .signup{grid-template-columns:1fr;gap:0}
+  .signup-form{padding-top:38px;max-width:none}
+}
