@@ -1,0 +1,10 @@
+{
+  "name": "sonido-events-website",
+  "private": true,
+  "description": "Sonido Events — static site. No dependencies.",
+  "scripts": {
+    "build": "node build.js",
+    "start": "node build.js && node serve.js",
+    "add-night": "node add-night.js"
+  }
+}

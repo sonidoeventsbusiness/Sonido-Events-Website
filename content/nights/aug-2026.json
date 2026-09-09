@@ -1,0 +1,154 @@
+{
+  "slug": "aug-2026",
+  "date": "2026-08-21",
+  "title": "21.08.26",
+  "eyebrow": "01 / The last one",
+  "dateLine": "Friday 21 August 2026",
+  "location": "Melbourne / Naarm",
+  "clips": [
+    {
+      "number": "01",
+      "time": "21:58",
+      "caption": "Early doors",
+      "loop": "/assets/events/aug-2026/clip-01-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-01.mp4",
+      "poster": "/assets/events/aug-2026/clip-01.jpg"
+    },
+    {
+      "number": "02",
+      "time": "22:03",
+      "caption": "Early doors",
+      "loop": "/assets/events/aug-2026/clip-02-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-02.mp4",
+      "poster": "/assets/events/aug-2026/clip-02.jpg"
+    },
+    {
+      "number": "03",
+      "time": "22:08",
+      "caption": "Early doors",
+      "loop": "/assets/events/aug-2026/clip-03-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-03.mp4",
+      "poster": "/assets/events/aug-2026/clip-03.jpg"
+    },
+    {
+      "number": "04",
+      "time": "22:40",
+      "caption": "Early doors",
+      "loop": "/assets/events/aug-2026/clip-04-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-04.mp4",
+      "poster": "/assets/events/aug-2026/clip-04.jpg"
+    },
+    {
+      "number": "05",
+      "time": "23:03",
+      "caption": "Room filling",
+      "loop": "/assets/events/aug-2026/clip-05-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-05.mp4",
+      "poster": "/assets/events/aug-2026/clip-05.jpg"
+    },
+    {
+      "number": "06",
+      "time": "23:21",
+      "caption": "Room filling",
+      "loop": "/assets/events/aug-2026/clip-06-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-06.mp4",
+      "poster": "/assets/events/aug-2026/clip-06.jpg"
+    },
+    {
+      "number": "07",
+      "time": "23:53",
+      "caption": "Midnight",
+      "loop": "/assets/events/aug-2026/clip-07-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-07.mp4",
+      "poster": "/assets/events/aug-2026/clip-07.jpg"
+    },
+    {
+      "number": "08",
+      "time": "23:53",
+      "caption": "Midnight",
+      "loop": "/assets/events/aug-2026/clip-08-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-08.mp4",
+      "poster": "/assets/events/aug-2026/clip-08.jpg"
+    },
+    {
+      "number": "09",
+      "time": "23:57",
+      "caption": "Midnight",
+      "loop": "/assets/events/aug-2026/clip-09-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-09.mp4",
+      "poster": "/assets/events/aug-2026/clip-09.jpg"
+    },
+    {
+      "number": "10",
+      "time": "23:57",
+      "caption": "Midnight",
+      "loop": "/assets/events/aug-2026/clip-10-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-10.mp4",
+      "poster": "/assets/events/aug-2026/clip-10.jpg"
+    },
+    {
+      "number": "11",
+      "time": "00:05",
+      "caption": "Peak time",
+      "loop": "/assets/events/aug-2026/clip-11-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-11.mp4",
+      "poster": "/assets/events/aug-2026/clip-11.jpg"
+    },
+    {
+      "number": "12",
+      "time": "00:41",
+      "caption": "Peak time",
+      "loop": "/assets/events/aug-2026/clip-12-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-12.mp4",
+      "poster": "/assets/events/aug-2026/clip-12.jpg"
+    },
+    {
+      "number": "13",
+      "time": "00:43",
+      "caption": "Peak time",
+      "loop": "/assets/events/aug-2026/clip-13-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-13.mp4",
+      "poster": "/assets/events/aug-2026/clip-13.jpg"
+    },
+    {
+      "number": "14",
+      "time": "00:45",
+      "caption": "Peak time",
+      "loop": "/assets/events/aug-2026/clip-14-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-14.mp4",
+      "poster": "/assets/events/aug-2026/clip-14.jpg"
+    },
+    {
+      "number": "15",
+      "time": "01:07",
+      "caption": "Last hour",
+      "loop": "/assets/events/aug-2026/clip-15-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-15.mp4",
+      "poster": "/assets/events/aug-2026/clip-15.jpg"
+    },
+    {
+      "number": "16",
+      "time": "01:10",
+      "caption": "Last hour",
+      "loop": "/assets/events/aug-2026/clip-16-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-16.mp4",
+      "poster": "/assets/events/aug-2026/clip-16.jpg"
+    },
+    {
+      "number": "17",
+      "time": "01:17",
+      "caption": "Last hour",
+      "loop": "/assets/events/aug-2026/clip-17-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-17.mp4",
+      "poster": "/assets/events/aug-2026/clip-17.jpg"
+    },
+    {
+      "number": "18",
+      "time": "01:21",
+      "caption": "Last hour",
+      "loop": "/assets/events/aug-2026/clip-18-loop.mp4",
+      "full": "/assets/events/aug-2026/clip-18.mp4",
+      "poster": "/assets/events/aug-2026/clip-18.jpg"
+    }
+  ]
+}

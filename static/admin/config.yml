@@ -1,0 +1,205 @@
+# Sonido Events — site editor
+#
+# Saving here commits to GitHub, which triggers a Netlify rebuild.
+# A change is live about a minute after you hit Publish.
+
+backend:
+  name: github
+  repo: sonidoeventsbusiness/Sonido-Events-Website
+  branch: main
+
+media_folder: static/assets/uploads
+public_folder: /assets/uploads
+
+# Line breaks typed into a "text" field become line breaks on the page.
+
+collections:
+  - name: pages
+    label: Pages
+    files:
+      - name: home
+        label: Home page
+        file: content/home.json
+        fields:
+          - { name: title, label: Browser tab title, widget: string }
+          - { name: description, label: Search engine description, widget: text }
+          - { name: heroMetaLeft, label: "Top line — left", widget: string }
+          - { name: heroMetaRight, label: "Top line — right", widget: string }
+          - { name: heroSubHeading, label: Big heading under the logo, widget: text }
+          - { name: heroSubEyebrow, label: Small line beside it, widget: string }
+          - { name: heroImage, label: Hero photo, widget: image }
+          - { name: heroImageAlt, label: Hero photo description, widget: string }
+          - { name: heroImageCaption, label: Hero photo caption, widget: string }
+          - { name: heroBottomEyebrow, label: Small line over the photo, widget: string }
+          - { name: heroBottomHeading, label: Heading over the photo, widget: text }
+          - { name: heroButtonLabel, label: Hero button text, widget: string }
+          - { name: heroButtonHref, label: Hero button link, widget: string }
+          - { name: stripLeft, label: "Scrolling strip — left", widget: string }
+          - { name: stripCentre, label: "Scrolling strip — centre", widget: string }
+          - { name: stripRight, label: "Scrolling strip — right", widget: string }
+          - { name: nextEventEyebrow, label: "Next event — small line", widget: string }
+          - { name: nextEventHeading, label: "Next event — heading", widget: text }
+          - { name: nextEventAside, label: "Next event — side note", widget: string }
+          - { name: lastNightEyebrow, label: "Last night — small line", widget: string }
+          - { name: lastNightHeading, label: "Last night — heading", widget: text }
+          - { name: lastNightAside, label: "Last night — side note", widget: string }
+          - { name: lastNightSlug, label: Which night to feature, widget: string, hint: "The folder name of the night, e.g. aug-2026" }
+          - { name: lastNightFeatured, label: Which four clips to show, widget: list, field: { name: number, label: Clip number, widget: number } }
+          - { name: lastNightNote, label: "Last night — note", widget: text }
+          - { name: lastNightButtonLabel, label: "Last night — button text", widget: string }
+          - { name: productionEyebrow, label: "Production — small line", widget: string }
+          - { name: productionHeading, label: "Production — heading", widget: text }
+          - { name: productionCopy, label: "Production — paragraph", widget: text }
+          - { name: productionButtonLabel, label: "Production — button text", widget: string }
+          - name: productionLinks
+            label: "Production — small links"
+            widget: list
+            fields:
+              - { name: label, label: Text, widget: string }
+              - { name: href, label: Link, widget: string }
+
+      - name: events
+        label: Events page
+        file: content/events.json
+        fields:
+          - { name: title, label: Browser tab title, widget: string }
+          - { name: description, label: Search engine description, widget: text }
+          - { name: introEyebrow, label: Small line at the top, widget: string }
+          - { name: introHeading, label: Page heading, widget: text }
+          - { name: introCopy, label: Opening paragraph, widget: text }
+          - { name: comingUpEyebrow, label: "Coming up — small line", widget: string }
+          - { name: comingUpHeading, label: "Coming up — heading", widget: text }
+          - name: photos
+            label: Photo pair
+            widget: list
+            fields:
+              - { name: src, label: Photo, widget: image }
+              - { name: alt, label: Photo description, widget: string }
+          - { name: archiveEyebrow, label: "Archive block — small line", widget: string }
+          - { name: archiveHeading, label: "Archive block — heading", widget: text }
+          - { name: archiveCopy, label: "Archive block — paragraph", widget: text }
+          - { name: archiveButtonLabel, label: "Archive block — button text", widget: string }
+
+      - name: hire
+        label: Production & hire page
+        file: content/hire.json
+        fields:
+          - { name: title, label: Browser tab title, widget: string }
+          - { name: description, label: Search engine description, widget: text }
+          - { name: introEyebrow, label: Small line at the top, widget: string }
+          - { name: introHeading, label: Page heading, widget: text }
+          - { name: introCopy, label: Opening paragraph, widget: text }
+          - { name: introButtonLabel, label: Top button text, widget: string }
+          - { name: productionEyebrow, label: "Production — small line", widget: string }
+          - { name: productionHeading, label: "Production — heading", widget: text }
+          - { name: productionCopy, label: "Production — paragraphs", widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: equipmentEyebrow, label: "Equipment — small line", widget: string }
+          - { name: equipmentHeading, label: "Equipment — heading", widget: text }
+          - name: cards
+            label: Equipment cards
+            widget: list
+            fields:
+              - { name: eyebrow, label: Small line, widget: string }
+              - { name: heading, label: Heading, widget: string }
+              - { name: copy, label: Paragraph, widget: text }
+          - { name: equipmentNote, label: Note under the cards, widget: text }
+          - { name: enquireEyebrow, label: "Enquire — small line", widget: string }
+          - { name: enquireHeading, label: "Enquire — heading", widget: text }
+          - { name: enquireCopy, label: "Enquire — paragraph", widget: text }
+          - { name: enquireButtonLabel, label: "Enquire — button text", widget: string }
+
+      - name: shop
+        label: Shop page
+        file: content/shop.json
+        fields:
+          - { name: title, label: Browser tab title, widget: string }
+          - { name: description, label: Search engine description, widget: text }
+          - { name: introEyebrow, label: Small line at the top, widget: string }
+          - { name: introHeading, label: Page heading, widget: text }
+          - { name: introCopy, label: Opening paragraph, widget: text }
+          - { name: stageEyebrow, label: Small line, widget: string }
+          - { name: stageHeading, label: Heading, widget: text }
+          - { name: stageNote, label: Note, widget: text }
+          - { name: stageButtonLabel, label: Button text, widget: string }
+
+      - name: pastEvents
+        label: Past events page
+        file: content/past-events.json
+        fields:
+          - { name: title, label: Browser tab title, widget: string }
+          - { name: description, label: Search engine description, widget: text }
+          - { name: heroEyebrow, label: Small line at the top, widget: string }
+          - { name: heroHeading, label: "Page heading — first line", widget: string }
+          - { name: heroHeadingEm, label: "Page heading — second line (italic)", widget: string }
+          - { name: heroCopy, label: Opening paragraph, widget: text }
+          - { name: reelHintLeft, label: "Reel hint — left", widget: string }
+          - { name: reelHintRight, label: "Reel hint — right", widget: string }
+          - { name: outroEyebrow, label: "Replay block — small line", widget: string }
+          - { name: outroHeading, label: "Replay block — heading", widget: text }
+          - { name: nextEyebrow, label: "Next event block — small line", widget: string }
+          - { name: nextHeading, label: "Next event block — heading", widget: text }
+          - { name: nextCopy, label: "Next event block — paragraph", widget: text }
+          - { name: nextButtonLabel, label: "Next event block — button text", widget: string }
+
+      - name: site
+        label: Site-wide details
+        file: content/site.json
+        fields:
+          - { name: brandName, label: Business name, widget: string }
+          - { name: themeColor, label: Browser theme colour, widget: string }
+          - { name: defaultDescription, label: Fallback search description, widget: text }
+          - { name: instagramEvents, label: Events Instagram link, widget: string }
+          - { name: instagramEventsHandle, label: Events Instagram handle, widget: string }
+          - { name: instagramHire, label: Hire Instagram link, widget: string }
+          - { name: instagramHireHandle, label: Hire Instagram handle, widget: string }
+          - { name: footerCopyright, label: "Footer — copyright", widget: string }
+          - { name: footerLocation, label: "Footer — location", widget: string }
+          - { name: footerServices, label: "Footer — services", widget: string }
+          - { name: footerFollowLabel, label: "Footer — follow label", widget: string }
+
+  - name: upcoming
+    label: Upcoming events
+    files:
+      - name: upcoming
+        label: What's coming up
+        file: content/upcoming.json
+        fields:
+          - name: events
+            label: Events
+            widget: list
+            fields:
+              - { name: dateDisplay, label: Date, widget: string, hint: "Shown big, e.g. 02 / 10" }
+              - { name: dayLine, label: Day and year, widget: string, hint: "e.g. FRIDAY · 2026" }
+              - { name: heading, label: Event name, widget: string }
+              - { name: copy, label: Details, widget: text }
+              - { name: buttonLabel, label: Button text, widget: string }
+              - { name: buttonHref, label: Button link, widget: string }
+
+  - name: nights
+    label: Past nights
+    label_singular: night
+    folder: content/nights
+    extension: json
+    format: json
+    create: true
+    identifier_field: slug
+    summary: "{{title}} — {{dateLine}}"
+    fields:
+      - { name: slug, label: Folder name, widget: string, hint: "Must match the folder in assets/events, e.g. aug-2026" }
+      - { name: date, label: Date, widget: date, format: YYYY-MM-DD, hint: "Used to order the archive — newest first" }
+      - { name: title, label: Title, widget: string, hint: "Shown big, e.g. 21.08.26" }
+      - { name: eyebrow, label: Small line above the title, widget: string, required: false }
+      - { name: dateLine, label: Full date, widget: string, hint: "e.g. Friday 21 August 2026" }
+      - { name: location, label: Location, widget: string }
+      - name: clips
+        label: Clips
+        label_singular: clip
+        widget: list
+        summary: "{{number}} · {{time}} — {{caption}}"
+        fields:
+          - { name: number, label: Number, widget: string, hint: "Two digits, e.g. 07" }
+          - { name: time, label: Time, widget: string, hint: "e.g. 23:53" }
+          - { name: caption, label: Caption, widget: string, hint: "e.g. Peak time" }
+          - { name: loop, label: Silent loop file, widget: string }
+          - { name: full, label: Full clip file, widget: string }
+          - { name: poster, label: Poster image, widget: string }

@@ -1,0 +1,26 @@
+{
+  "title": "Production & equipment hire | Sonido Events",
+  "description": "Event production and equipment hire in Melbourne. Talk to Sonido about bringing your event to life.",
+  "introEyebrow": "Sonido / Production & hire",
+  "introHeading": "BRING YOUR\nEVENT TO LIFE.",
+  "introCopy": "Planning a party, a pop-up or something of your own? Talk to Sonido about event production and equipment hire in Melbourne.",
+  "introButtonLabel": "Enquire about your event",
+  "productionEyebrow": "01 / Event production",
+  "productionHeading": "FROM IDEA\nTO DANCEFLOOR.",
+  "productionCopy": [
+    "Tell us what you’re putting on. We’ll work through the space, the sound and the equipment your event needs.",
+    "Get in touch to discuss the scope of your event and the production support available."
+  ],
+  "equipmentEyebrow": "02 / Equipment hire",
+  "equipmentHeading": "LET’S TALK SETUP.",
+  "cards": [
+    { "eyebrow": "01 / The sound", "heading": "Sound requirements", "copy": "Share your space and expected crowd so we can discuss a suitable sound setup." },
+    { "eyebrow": "02 / The booth", "heading": "DJ requirements", "copy": "Send through your DJ rider or the setup you have in mind." },
+    { "eyebrow": "03 / The details", "heading": "Your full setup", "copy": "Let us know what else you need and we’ll confirm what’s available." }
+  ],
+  "equipmentNote": "Equipment availability and pricing are confirmed on enquiry.",
+  "enquireEyebrow": "Start the conversation",
+  "enquireHeading": "WHAT’S THE PLAN?",
+  "enquireCopy": "Send us your event date, venue, expected guest count and equipment requirements on Instagram.",
+  "enquireButtonLabel": "Enquire with @sonidohire"
+}

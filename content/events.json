@@ -1,0 +1,17 @@
+{
+  "title": "Events | Sonido Events",
+  "description": "Parties, pop-up raves and nights together. Find the next Sonido gathering in Melbourne.",
+  "introEyebrow": "Sonido / Events",
+  "introHeading": "MEET ON THE\nDANCEFLOOR.",
+  "introCopy": "Parties, pop-up raves and nights together. Find the next Sonido gathering here.",
+  "comingUpEyebrow": "Coming up",
+  "comingUpHeading": "SAVE THE DATE.",
+  "photos": [
+    { "src": "/assets/dancefloor.jpg", "alt": "Guests at a Sonido Melbourne party" },
+    { "src": "/assets/dj-duo.jpg", "alt": "DJs performing together at Sonido" }
+  ],
+  "archiveEyebrow": "The archive",
+  "archiveHeading": "MISSED THE LAST ONE?",
+  "archiveCopy": "Eighteen clips from 21 August — 21:58 through to 01:21. Watch the whole night back.",
+  "archiveButtonLabel": "Enter the archive"
+}
