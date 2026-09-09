@@ -132,7 +132,7 @@ ${isIndex ? archiveStrip(others) : ''}
       title: isIndex ? page.title : `${night.title} | Past events | Sonido Events`,
       description: page.description,
     },
-    current: '/past-events/', body, playerHtml,
+    current: '/past-events/', path: isIndex ? '/past-events/' : `/past-events/${night.slug}/`, body, playerHtml,
     contactHref: site.instagramEvents,
     instaHref: site.instagramEvents,
     instaHandle: site.instagramEventsHandle,

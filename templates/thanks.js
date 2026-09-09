@@ -14,8 +14,8 @@ module.exports = function thanks({ site, content }) {
 
   return layout({
     site,
-    page: { title: signup.thanksTitle, description: signup.thanksCopy },
-    current: '', body,
+    page: { title: signup.thanksTitle, description: signup.thanksCopy, noindex: true },
+    current: '', path: '/thanks/', body,
     contactHref: site.instagramEvents,
     instaHref: site.instagramEvents,
     instaHandle: site.instagramEventsHandle,

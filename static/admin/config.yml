@@ -23,6 +23,7 @@ collections:
         fields:
           - { name: title, label: Browser tab title, widget: string }
           - { name: description, label: Search engine description, widget: text }
+          - { name: heroH1, label: Hidden page heading (for Google and screen readers), widget: string, hint: "Not visible — the logo is what people see" }
           - { name: heroMetaLeft, label: "Top line — left", widget: string }
           - { name: heroMetaRight, label: "Top line — right", widget: string }
           - { name: heroSubHeading, label: Big heading under the logo, widget: text }
@@ -163,6 +164,10 @@ collections:
         file: content/site.json
         fields:
           - { name: brandName, label: Business name, widget: string }
+          - { name: url, label: Website address, widget: string, hint: "Used for share cards and the sitemap — change this when the domain goes live" }
+          - { name: shortDescription, label: One-line description of the business, widget: text }
+          - { name: areaServed, label: Area served, widget: string }
+          - { name: ogImage, label: Social share image, widget: image }
           - { name: themeColor, label: Browser theme colour, widget: string }
           - { name: defaultDescription, label: Fallback search description, widget: text }
           - { name: instagramEvents, label: Events Instagram link, widget: string }

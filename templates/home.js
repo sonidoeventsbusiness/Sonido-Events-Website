@@ -28,7 +28,7 @@ module.exports = function home({ site, content, upcoming, nights }) {
     </div>
 
     <h1 class="hero-mark">
-      <span class="sr-only">Sonido</span>
+      <span class="sr-only">${esc(page.heroH1)}</span>
       <span class="wordmark" aria-hidden="true"></span>
     </h1>
 
@@ -113,7 +113,7 @@ ${eventRows}
     : '';
 
   return layout({
-    site, page, current: '/', body, playerHtml,
+    site, page, current: '/', path: '/', body, playerHtml,
     contactHref: site.instagramEvents,
     instaHref: site.instagramEvents,
     instaHandle: site.instagramEventsHandle,

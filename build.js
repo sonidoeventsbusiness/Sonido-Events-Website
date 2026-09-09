@@ -66,6 +66,23 @@ function write(routePath, html) {
   return dest;
 }
 
+/* sitemap.xml and robots.txt — generated from the pages actually built,
+   so a new night can never be missing from the sitemap. */
+function writeSeoFiles(site, routes) {
+  const urls = routes.map((r) => {
+    const loc = site.url + r;
+    return `  <url><loc>${loc}</loc></url>`;
+  }).join('\n');
+
+  fs.writeFileSync(path.join(OUT, 'sitemap.xml'),
+    `<?xml version="1.0" encoding="UTF-8"?>\n` +
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
+
+  fs.writeFileSync(path.join(OUT, 'robots.txt'),
+    `User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /thanks/\n\n` +
+    `Sitemap: ${site.url}/sitemap.xml\n`);
+}
+
 function build() {
   const { content, upcoming, nights, nightList } = loadContent();
   const site = content.site;
@@ -109,7 +126,13 @@ function build() {
     );
   }
 
+  // /thanks/ is deliberately absent: it is noindex and has nothing to rank for
+  const routes = ['/', '/events/', '/hire/', '/shop/', '/past-events/']
+    .concat(nightList.map((n) => `/past-events/${n.slug}/`));
+  writeSeoFiles(site, routes);
+
   console.log(`Built ${written.length} pages into _site/`);
+  console.log(`sitemap.xml lists ${routes.length} URLs`);
   for (const f of written) console.log('  ' + path.relative(ROOT, f));
   console.log(`${nightList.length} night(s) in the archive: ${nightList.map((n) => n.slug).join(', ')}`);
 }

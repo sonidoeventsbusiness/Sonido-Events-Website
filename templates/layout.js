@@ -131,15 +131,51 @@ function signupSection(signup) {
 </section>`;
 }
 
-function layout({ site, page, current, contactHref, instaHref, instaHandle, body, playerHtml = '' }) {
+/* Structured data. Sonido has no public shopfront, so this describes the
+   organisation and the area it serves rather than claiming a street address. */
+function structuredData(site) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: site.brandName,
+    url: site.url,
+    logo: site.url + '/assets/sonido-mark.png',
+    image: site.url + esc(site.ogImage),
+    description: site.shortDescription,
+    areaServed: { '@type': 'Place', name: site.areaServed },
+    sameAs: [site.instagramEvents, site.instagramHire].filter(Boolean),
+  };
+  return `<script type="application/ld+json">${JSON.stringify(data)}</script>`;
+}
+
+function layout({ site, page, current, contactHref, instaHref, instaHandle, body, playerHtml = '', path = '' }) {
+  const description = page.description || site.defaultDescription;
+  const canonical = site.url + (path || current || '/');
+  const ogImage = site.url + site.ogImage;
+
   return `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="${esc(site.themeColor)}">
-<meta name="description" content="${esc(page.description || site.defaultDescription)}">
+<meta name="description" content="${esc(description)}">
 <title>${esc(page.title)}</title>
+<link rel="canonical" href="${esc(canonical)}">${page.noindex ? '\n<meta name="robots" content="noindex">' : ''}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="${esc(site.brandName)}">
+<meta property="og:title" content="${esc(page.title)}">
+<meta property="og:description" content="${esc(description)}">
+<meta property="og:url" content="${esc(canonical)}">
+<meta property="og:image" content="${esc(ogImage)}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(page.title)}">
+<meta name="twitter:description" content="${esc(description)}">
+<meta name="twitter:image" content="${esc(ogImage)}">
+${structuredData(site)}
 <link rel="icon" type="image/png" href="/favicon.png"><link rel="apple-touch-icon" href="/favicon.png">
 <link rel="preload" as="image" href="/assets/sonido-mark.png">
 <link rel="stylesheet" href="/styles.css">

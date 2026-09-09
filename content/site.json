@@ -9,5 +9,9 @@
   "footerCopyright": "© 2026 SONIDO EVENTS",
   "footerLocation": "MELBOURNE / NAARM",
   "footerServices": "EVENTS · PRODUCTION · EQUIPMENT HIRE",
-  "footerFollowLabel": "Follow the frequency"
+  "footerFollowLabel": "Follow the frequency",
+  "url": "https://sonido-events.netlify.app",
+  "areaServed": "Melbourne, Victoria, Australia",
+  "ogImage": "/assets/og-card.jpg",
+  "shortDescription": "Parties, pop-up raves, event production and equipment hire in Melbourne."
 }
