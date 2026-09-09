@@ -296,3 +296,35 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   .signup{grid-template-columns:1fr;gap:0}
   .signup-form{padding-top:38px;max-width:none}
 }
+
+/* 12. enquiry form + contact ------------------------------------- */
+.enquiry{background:var(--bg-2);display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:start}
+.enquiry h2{color:var(--green)}
+.enquiry-copy p{font-size:18px;line-height:1.7;color:var(--muted);max-width:500px;margin:30px 0 0}
+.enquiry-direct a{color:var(--green);border-bottom:1px solid rgba(121,178,84,.4)}
+.enquiry-direct a:hover{border-bottom-color:var(--green)}
+.enquiry-form{padding-top:24px;display:flex;flex-direction:column;gap:26px}
+.enquiry-intro{font-size:14px;line-height:1.7;color:var(--muted);margin:0}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.enquiry-form .field{display:flex;flex-direction:column;gap:10px}
+.enquiry-form label{color:var(--muted)}
+.enquiry-form input,.enquiry-form textarea{background:transparent;border:0;border-bottom:1px solid var(--line);
+  color:var(--ink);font:inherit;font-size:17px;padding:10px 0;transition:border-color .2s ease}
+.enquiry-form textarea{border:1px solid var(--line);padding:14px;resize:vertical;line-height:1.6}
+.enquiry-form input::placeholder,.enquiry-form textarea::placeholder{color:#6c7166}
+.enquiry-form input:focus,.enquiry-form textarea:focus{outline:none;border-color:var(--green);border-bottom-color:var(--green)}
+.enquiry-form .button{align-self:start}
+.enquiry-form .signup-small a{color:var(--green)}
+/* date and number inputs render their own controls; keep them on-brand */
+.enquiry-form input[type=date],.enquiry-form input[type=number]{color-scheme:dark}
+.foot-contact{display:flex;gap:60px;flex-wrap:wrap}
+.foot-contact a:hover{color:var(--green)}
+
+@media(max-width:900px){
+  .enquiry{grid-template-columns:1fr;gap:0}
+  .enquiry-form{padding-top:38px}
+}
+@media(max-width:600px){
+  .field-grid{grid-template-columns:1fr}
+  .foot-contact{gap:28px;flex-direction:column}
+}

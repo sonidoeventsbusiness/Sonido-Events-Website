@@ -47,7 +47,10 @@ function footer(site, instaHref, instaHandle) {
   return `<footer class="foot">
   <div class="foot-top">
     <a href="/" class="foot-brand brand-logo" aria-label="Sonido Events home"><span class="wordmark"></span></a>
-    <a href="${esc(instaHref)}" target="_blank" rel="noopener">${esc(site.footerFollowLabel)}<br><br>${esc(instaHandle)} ↗</a>
+    <div class="foot-contact">
+      <a href="${esc(instaHref)}" target="_blank" rel="noopener">${esc(site.footerFollowLabel)}<br><br>${esc(instaHandle)} ↗</a>
+      <a href="mailto:${esc(site.email)}">${esc(site.emailLabel)}<br><br>${esc(site.email)}</a>
+    </div>
   </div>
   <div class="foot-bottom">
     <span>${esc(site.footerCopyright)}</span>
@@ -106,7 +109,7 @@ function tile(clip, { labelStyle = 'short' } = {}) {
 /* The mailing list block. Lives on the homepage and the events page, sharing
    one Netlify form name so submissions collect in a single list.
    `form-name` and the honeypot are what Netlify's form handling expects. */
-function signupSection(signup) {
+function signupSection(signup, source = 'site') {
   return `<section class="section signup" id="signup">
   <div class="signup-copy">
     <span class="eyebrow green">${esc(signup.eyebrow)}</span>
@@ -116,6 +119,7 @@ function signupSection(signup) {
   <form class="signup-form" name="newsletter" method="POST" action="/thanks/"
         data-netlify="true" data-netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="newsletter">
+    <input type="hidden" name="source" value="${esc(source)}">
     <p class="signup-gotcha"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
     <div class="field">
       <label class="eyebrow" for="signup-name">${esc(signup.nameLabel)}</label>
@@ -146,6 +150,37 @@ function structuredData(site) {
     sameAs: [site.instagramEvents, site.instagramHire].filter(Boolean),
   };
   return `<script type="application/ld+json">${JSON.stringify(data)}</script>`;
+}
+
+/* The hire enquiry form. Goes to Netlify, which emails it on — so someone
+   without Instagram can still start a conversation. */
+function enquiryForm(hire, instagramHire, instagramHireHandle) {
+  const field = (id, name, label, type = 'text', extra = '') =>
+    `    <div class="field">
+      <label class="eyebrow" for="enq-${id}">${esc(label)}</label>
+      <input id="enq-${id}" name="${esc(name)}" type="${type}"${extra}>
+    </div>`;
+
+  return `<form class="enquiry-form" name="enquiry" method="POST" action="/thanks/enquiry/"
+      data-netlify="true" data-netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="enquiry">
+  <p class="signup-gotcha"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+  <p class="enquiry-intro">${esc(hire.formIntro)}</p>
+  <div class="field-grid">
+${field('name', 'name', hire.formNameLabel, 'text', ' required autocomplete="name"')}
+${field('email', 'email', hire.formEmailLabel, 'email', ' required autocomplete="email"')}
+${field('phone', 'phone', hire.formPhoneLabel, 'tel', ' autocomplete="tel"')}
+${field('date', 'event date', hire.formDateLabel, 'date')}
+${field('venue', 'venue', hire.formVenueLabel)}
+${field('guests', 'expected guests', hire.formGuestsLabel, 'number', ' min="1"')}
+  </div>
+  <div class="field">
+    <label class="eyebrow" for="enq-details">${esc(hire.formDetailsLabel)}</label>
+    <textarea id="enq-details" name="details" rows="5" placeholder="${esc(hire.formDetailsHint)}"></textarea>
+  </div>
+  <button class="button" type="submit">${esc(hire.formButtonLabel)} <span class="arrow">↗</span></button>
+  <p class="signup-small">${esc(hire.formOrInstagram).replace(esc(instagramHireHandle), `<a href="${esc(instagramHire)}" target="_blank" rel="noopener">${esc(instagramHireHandle)}</a>`)}</p>
+</form>`;
 }
 
 function layout({ site, page, current, contactHref, instaHref, instaHandle, body, playerHtml = '', path = '' }) {
@@ -197,4 +232,4 @@ ${playerHtml ? '\n' + playerHtml + '\n' : ''}
 `;
 }
 
-module.exports = { esc, lines, button, layout, player, tile, signupSection };
+module.exports = { esc, lines, button, layout, player, tile, signupSection, enquiryForm };

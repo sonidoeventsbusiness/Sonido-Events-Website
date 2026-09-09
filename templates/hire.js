@@ -1,5 +1,5 @@
 'use strict';
-const { esc, lines, button, layout } = require('./layout.js');
+const { esc, lines, button, layout, enquiryForm } = require('./layout.js');
 
 module.exports = function hire({ site, content }) {
   const page = content.hire;
@@ -35,13 +35,15 @@ module.exports = function hire({ site, content }) {
   </div>
   <p class="note">${esc(page.equipmentNote)}</p>
 </section>
-<section class="section enquire" id="enquire">
-  <div>
-    <span class="eyebrow">${esc(page.enquireEyebrow)}</span>
+<section class="section enquiry" id="enquire">
+  <div class="enquiry-copy">
+    <span class="eyebrow green">${esc(page.enquireEyebrow)}</span>
     <h2>${lines(page.enquireHeading)}</h2>
     <p>${esc(page.enquireCopy)}</p>
+    <p class="enquiry-direct">Or email us directly at
+      <a href="mailto:${esc(site.email)}">${esc(site.email)}</a>.</p>
   </div>
-  ${button(page.enquireButtonLabel, site.instagramHire, { external: true })}
+  ${enquiryForm(page, site.instagramHire, site.instagramHireHandle)}
 </section>`;
 
   return layout({

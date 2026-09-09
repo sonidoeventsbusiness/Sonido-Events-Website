@@ -108,6 +108,22 @@ collections:
           - { name: enquireHeading, label: "Enquire — heading", widget: text }
           - { name: enquireCopy, label: "Enquire — paragraph", widget: text }
           - { name: enquireButtonLabel, label: "Enquire — button text", widget: string }
+          - { name: formIntro, label: "Form — intro line", widget: text }
+          - { name: formNameLabel, label: "Form — name field label", widget: string }
+          - { name: formEmailLabel, label: "Form — email field label", widget: string }
+          - { name: formPhoneLabel, label: "Form — phone field label", widget: string }
+          - { name: formDateLabel, label: "Form — event date label", widget: string }
+          - { name: formVenueLabel, label: "Form — venue label", widget: string }
+          - { name: formGuestsLabel, label: "Form — guest count label", widget: string }
+          - { name: formDetailsLabel, label: "Form — details label", widget: string }
+          - { name: formDetailsHint, label: "Form — details placeholder", widget: text }
+          - { name: formButtonLabel, label: "Form — button text", widget: string }
+          - { name: formOrInstagram, label: "Form — Instagram fallback line", widget: string }
+          - { name: thanksTitle, label: "Enquiry thank-you — tab title", widget: string }
+          - { name: thanksEyebrow, label: "Enquiry thank-you — small line", widget: string }
+          - { name: thanksHeading, label: "Enquiry thank-you — heading", widget: text }
+          - { name: thanksCopy, label: "Enquiry thank-you — paragraph", widget: text }
+          - { name: thanksButtonLabel, label: "Enquiry thank-you — button text", widget: string }
 
       - name: shop
         label: Shop page
@@ -122,6 +138,9 @@ collections:
           - { name: stageHeading, label: Heading, widget: text }
           - { name: stageNote, label: Note, widget: text }
           - { name: stageButtonLabel, label: Button text, widget: string }
+          - { name: signupEyebrow, label: "Shop list — small line", widget: string }
+          - { name: signupHeading, label: "Shop list — heading", widget: text }
+          - { name: signupCopy, label: "Shop list — paragraph", widget: text }
 
       - name: pastEvents
         label: Past events page
@@ -173,6 +192,8 @@ collections:
           - { name: instagramEvents, label: Events Instagram link, widget: string }
           - { name: instagramEventsHandle, label: Events Instagram handle, widget: string }
           - { name: instagramHire, label: Hire Instagram link, widget: string }
+          - { name: email, label: Contact email address, widget: string, hint: "Where enquiries and the footer link go" }
+          - { name: emailLabel, label: "Footer label above the email", widget: string }
           - { name: instagramHireHandle, label: Hire Instagram handle, widget: string }
           - { name: footerCopyright, label: "Footer — copyright", widget: string }
           - { name: footerLocation, label: "Footer — location", widget: string }

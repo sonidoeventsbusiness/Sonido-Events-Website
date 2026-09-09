@@ -34,5 +34,21 @@
   "enquireEyebrow": "Start the conversation",
   "enquireHeading": "WHAT’S THE PLAN?",
   "enquireCopy": "Send us your event date, venue, expected guest count and equipment requirements on Instagram.",
-  "enquireButtonLabel": "Enquire with @sonidohire"
+  "enquireButtonLabel": "Enquire with @sonidohire",
+  "formIntro": "Fill this in and it comes straight to our inbox — no Instagram needed. The more you can tell us, the more useful our first reply will be.",
+  "formNameLabel": "Your name",
+  "formEmailLabel": "Email address",
+  "formPhoneLabel": "Phone (optional)",
+  "formDateLabel": "Event date",
+  "formVenueLabel": "Venue or suburb",
+  "formGuestsLabel": "Expected guests",
+  "formDetailsLabel": "What do you need?",
+  "formDetailsHint": "Sound, DJ setup, lighting, full production — whatever you have in mind.",
+  "formButtonLabel": "Send enquiry",
+  "formOrInstagram": "Prefer Instagram? Message @sonidohire instead.",
+  "thanksTitle": "Enquiry received | Sonido Events",
+  "thanksEyebrow": "Got it",
+  "thanksHeading": "WE'LL BE\nIN TOUCH.",
+  "thanksCopy": "Your enquiry has landed in our inbox. We'll come back to you with the detail — usually within a couple of days.",
+  "thanksButtonLabel": "Back to the site"
 }

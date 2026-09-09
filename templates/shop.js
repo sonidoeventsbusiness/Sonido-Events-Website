@@ -1,5 +1,5 @@
 'use strict';
-const { esc, lines, button, layout } = require('./layout.js');
+const { esc, lines, button, layout, signupSection } = require('./layout.js');
 
 module.exports = function shop({ site, content }) {
   const page = content.shop;
@@ -14,7 +14,13 @@ module.exports = function shop({ site, content }) {
   <h2>${lines(page.stageHeading)}</h2>
   <p class="note">${esc(page.stageNote)}</p>
   ${button(page.stageButtonLabel, site.instagramEvents, { ghost: true, external: true })}
-</section>`;
+</section>
+${signupSection({
+  ...content.signup,
+  eyebrow: page.signupEyebrow,
+  heading: page.signupHeading,
+  copy: page.signupCopy,
+}, 'shop')}`;
 
   return layout({
     site, page, current: '/shop/', body,

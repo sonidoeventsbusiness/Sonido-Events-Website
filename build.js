@@ -38,6 +38,13 @@ function loadContent() {
     .readdirSync(nightsDir)
     .filter((f) => f.endsWith('.json'))
     .map((f) => readJson(path.join(nightsDir, f)))
+    // A night saved in the editor before its clips exist would otherwise fail
+    // the build. Skip it with a warning instead, so the site still deploys.
+    .filter((n) => {
+      const ok = n && Array.isArray(n.clips) && n.clips.length > 0 && n.slug;
+      if (!ok) console.warn(`  skipping night "${(n && n.slug) || 'unnamed'}" — no clips yet`);
+      return ok;
+    })
     .sort((a, b) => String(b.date).localeCompare(String(a.date))); // newest first
 
   const nights = {};
@@ -87,7 +94,7 @@ function build() {
   const { content, upcoming, nights, nightList } = loadContent();
   const site = content.site;
 
-  if (!nightList.length) throw new Error('No nights found in content/nights/');
+  if (!nightList.length) throw new Error('No usable nights in content/nights/ — every night needs at least one clip');
 
   // A previous build is cleared where the filesystem allows it; where it
   // doesn't, the copy below simply overwrites in place.
@@ -106,6 +113,7 @@ function build() {
   const shop = require('./templates/shop.js');
   const pastEvents = require('./templates/past-events.js');
   const thanks = require('./templates/thanks.js');
+  const thanksEnquiry = require('./templates/thanks-enquiry.js');
 
   const written = [];
   written.push(write('.', home({ site, content, upcoming, nights })));
@@ -113,6 +121,7 @@ function build() {
   written.push(write('hire', hire({ site, content })));
   written.push(write('shop', shop({ site, content })));
   written.push(write('thanks', thanks({ site, content })));
+  written.push(write(path.join('thanks', 'enquiry'), thanksEnquiry({ site, content })));
 
   // /past-events/ shows the newest night; every night also gets its own page
   const [newest, ...older] = nightList;
