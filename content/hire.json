@@ -3,30 +3,30 @@
   "description": "Event production and equipment hire in Melbourne. Sound systems, DJ setups and full production for parties, pop-ups and private events. Enquire with Sonido.",
   "introEyebrow": "Sonido / Production & hire",
   "introHeading": "BRING YOUR\nEVENT TO LIFE.",
-  "introCopy": "Planning a party, a pop-up or something of your own? Talk to Sonido about event production and equipment hire in Melbourne.",
+  "introCopy": "Planning a party, a pop-up or something of your own? Sonido does sound system hire, DJ equipment hire and full event production across Melbourne — from warehouse parties to private functions.",
   "introButtonLabel": "Enquire about your event",
   "productionEyebrow": "01 / Event production",
   "productionHeading": "FROM IDEA\nTO DANCEFLOOR.",
   "productionCopy": [
     "Tell us what you’re putting on. We’ll work through the space, the sound and the equipment your event needs.",
-    "Get in touch to discuss the scope of your event and the production support available."
+    "Warehouse party, backyard, bar or venue — get in touch to discuss the scope of your event and the production support available."
   ],
   "equipmentEyebrow": "02 / Equipment hire",
   "equipmentHeading": "LET’S TALK SETUP.",
   "cards": [
     {
       "eyebrow": "01 / The sound",
-      "heading": "Sound requirements",
+      "heading": "Sound system hire",
       "copy": "Share your space and expected crowd so we can discuss a suitable sound setup."
     },
     {
       "eyebrow": "02 / The booth",
-      "heading": "DJ requirements",
+      "heading": "DJ equipment hire",
       "copy": "Send through your DJ rider or the setup you have in mind."
     },
     {
       "eyebrow": "03 / The details",
-      "heading": "Your full setup",
+      "heading": "Full event production",
       "copy": "Let us know what else you need and we’ll confirm what’s available."
     }
   ],

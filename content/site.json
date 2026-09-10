@@ -15,5 +15,19 @@
   "ogImage": "/assets/og-card.jpg",
   "shortDescription": "Parties, pop-up raves, event production and equipment hire in Melbourne.",
   "email": "sonidoeventscontact@gmail.com",
-  "emailLabel": "Email us"
+  "emailLabel": "Email us",
+  "services": [
+    {
+      "name": "Sound system hire",
+      "description": "PA and sound system hire for parties, warehouse events and private functions in Melbourne."
+    },
+    {
+      "name": "DJ equipment hire",
+      "description": "DJ booth and equipment hire for events across Melbourne."
+    },
+    {
+      "name": "Event production",
+      "description": "Full event production for parties and pop-up events in Melbourne — sound, setup and the gear to run the night."
+    }
+  ]
 }

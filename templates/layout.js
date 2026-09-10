@@ -144,11 +144,33 @@ function structuredData(site) {
     name: site.brandName,
     url: site.url,
     logo: site.url + '/assets/sonido-mark.png',
-    image: site.url + esc(site.ogImage),
+    image: site.url + site.ogImage,
     description: site.shortDescription,
+    email: site.email,
     areaServed: { '@type': 'Place', name: site.areaServed },
     sameAs: [site.instagramEvents, site.instagramHire].filter(Boolean),
   };
+
+  // Name the services in the terms people search for. No address is claimed —
+  // Sonido has no shopfront, so this stays an Organization serving an area
+  // rather than a LocalBusiness pinned to a street.
+  if (Array.isArray(site.services) && site.services.length) {
+    data.hasOfferCatalog = {
+      '@type': 'OfferCatalog',
+      name: `${site.brandName} services`,
+      itemListElement: site.services.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: s.name,
+          description: s.description,
+          areaServed: { '@type': 'Place', name: site.areaServed },
+          provider: { '@type': 'Organization', name: site.brandName, url: site.url },
+        },
+      })),
+    };
+  }
+
   return `<script type="application/ld+json">${JSON.stringify(data)}</script>`;
 }
 
