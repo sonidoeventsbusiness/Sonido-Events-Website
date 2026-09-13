@@ -1,26 +1,27 @@
 {
   "title": "Parties & Event Production in Melbourne | Sonido",
-  "description": "Sonido runs parties and pop-up raves in Melbourne, and provides event production and equipment hire. See what's coming up and watch the last night back.",
-  "heroMetaLeft": "Independent energy. Shared frequency.",
-  "heroMetaRight": "Melbourne / Naarm · For the dancefloor",
-  "heroSubHeading": "See you in\nthe sound.",
-  "heroSubEyebrow": "Est. Melbourne · Parties & production",
+  "description": "Sonido runs parties and pop-up raves in Melbourne, provides event production and equipment hire. See what's coming up and check out some of our previous events.",
+  "heroH1": "Sonido — parties and event production in Melbourne",
+  "heroMetaLeft": "ㅤ",
+  "heroMetaRight": "Melbourne, Aus",
+  "heroSubHeading": "Pop Up Events, Equipment Hire, DJ Hire, Event Production, And Everything Inbetween",
+  "heroSubEyebrow": "ㅤ",
   "heroImage": "/assets/crowd-dj.jpg",
   "heroImageAlt": "A packed Sonido Melbourne dancefloor surrounds the DJ booth",
   "heroImageCaption": "SONIDO EVENTS / MELBOURNE",
-  "heroBottomEyebrow": "Parties. Pop-ups. Late nights.",
-  "heroBottomHeading": "Good people.\nProper sound.",
+  "heroBottomEyebrow": "Bringing you the best local artists.",
+  "heroBottomHeading": "ㅤ",
   "heroButtonLabel": "Next event · 02 October",
   "heroButtonHref": "/events/",
-  "stripLeft": "Made for the dancefloor",
-  "stripCentre": "Events / Production / Equipment hire",
+  "stripLeft": "Crafting the best dance atmosphere",
+  "stripCentre": "ㅤ",
   "stripRight": "Scroll to explore ↓",
-  "nextEventEyebrow": "01 / On the calendar",
-  "nextEventHeading": "SEE YOU\nIN THE FRONT.",
-  "nextEventAside": "The next gathering",
-  "lastNightEyebrow": "02 / What you missed",
-  "lastNightHeading": "THE LAST ONE.\n21.08.26.",
-  "lastNightAside": "Straight off the floor",
+  "nextEventEyebrow": "ㅤ",
+  "nextEventHeading": "OUR NEXT EVENT",
+  "nextEventAside": "ㅤ",
+  "lastNightEyebrow": "What you missed",
+  "lastNightHeading": "PAST EVENTS",
+  "lastNightAside": "ㅤ",
   "lastNightSlug": "aug-2026",
   "lastNightFeatured": [
     1,
@@ -28,11 +29,11 @@
     13,
     17
   ],
-  "lastNightNote": "Eighteen clips, 21:58 to 01:21. The whole night is in the archive.",
-  "lastNightButtonLabel": "Enter the archive",
-  "productionEyebrow": "03 / Behind the sound",
-  "productionHeading": "YOUR VISION.\nOUR FREQUENCY.",
-  "productionCopy": "From the first cable to the final track. Sonido brings the production and equipment to help make your next event happen.",
+  "lastNightNote": "Checkout some clips from our previous pop ups",
+  "lastNightButtonLabel": "Enter",
+  "productionEyebrow": "Behind the sound",
+  "productionHeading": "PLANNING YOUR OWN EVENT?",
+  "productionCopy": "We can help you craft the perfect event with our wide range of audio, lighting and other miscellaneous equipment. Reach out today!",
   "productionButtonLabel": "Production & equipment hire",
   "productionLinks": [
     {
@@ -43,6 +44,5 @@
       "label": "Equipment hire",
       "href": "/hire/#equipment"
     }
-  ],
-  "heroH1": "Sonido — parties and event production in Melbourne"
+  ]
 }
