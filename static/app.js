@@ -2,7 +2,13 @@
    1. mobile navigation
    2. lazy, in-view video tiles
    3. the reel: vertical scroll drives the horizontal filmstrip
-   4. the player: full-screen clip playback with sound            */
+   4. the player: full-screen clip playback with sound
+   5. background beds: keep muted hero footage rolling
+   6. hero lasers: the homepage laser stage
+
+   Sections 4 and 5 each `return` early on pages that lack their markup,
+   so anything added after them must live in its own IIFE or it silently
+   never runs. That is why the lasers are scoped separately below.      */
 
 (function () {
   'use strict';
@@ -239,7 +245,13 @@
   document.addEventListener('visibilitychange', function () { if (!document.hidden) nudge(); });
   window.addEventListener('pageshow', nudge);
   nudge();
-  /* 5. hero lasers ---------------------------------------------- */
+})();
+
+(function () {
+  'use strict';
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 6. hero lasers ---------------------------------------------- */
   /* Two emitters in the top corners throwing beams that cross through the
      middle, drawn additively so the crossings brighten the way real beams
      do in haze. Canvas, so there is no asset to download. Idle when the
@@ -385,5 +397,4 @@
       start();
     })();
   }
-
 })();
