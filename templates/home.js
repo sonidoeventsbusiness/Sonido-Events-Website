@@ -12,29 +12,14 @@ module.exports = function home({ site, content, upcoming, nights }) {
 
   const body = `
   <section class="hero">
-    <div class="hero-meta eyebrow">
-      <span>${esc(page.heroMetaLeft)}</span>
-      <span>${esc(page.heroMetaRight)}</span>
-    </div>
-
-    <h1 class="hero-mark">
-      <span class="sr-only">${esc(page.heroH1)}</span>
-      <span class="wordmark" aria-hidden="true"></span>
-    </h1>
-
-    <div class="hero-sub">
-      <h2>${lines(page.heroSubHeading)}</h2>
-      <span class="eyebrow green">${esc(page.heroSubEyebrow)}</span>
-    </div>
-
-    <div class="hero-visual">
-      <img src="${esc(page.heroImage)}" alt="${esc(page.heroImageAlt)}" fetchpriority="high">
-      <span class="visual-caption eyebrow">${esc(page.heroImageCaption)}</span>
-      <div class="hero-bottom">
-        <div>
-          <span class="eyebrow">${esc(page.heroBottomEyebrow)}</span>
-          <h2>${lines(page.heroBottomHeading)}</h2>
-        </div>
+    <div class="hero-stage">
+      <canvas class="hero-lasers" aria-hidden="true"></canvas>
+      <div class="hero-stage-inner">
+        <h1 class="hero-mark">
+          <span class="sr-only">${esc(page.heroH1)}</span>
+          <span class="wordmark" aria-hidden="true"></span>
+        </h1>
+        <h2 class="hero-line">${lines(page.heroSubHeading)}</h2>
         ${button(page.heroButtonLabel, page.heroButtonHref)}
       </div>
     </div>

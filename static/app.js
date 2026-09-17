@@ -239,4 +239,151 @@
   document.addEventListener('visibilitychange', function () { if (!document.hidden) nudge(); });
   window.addEventListener('pageshow', nudge);
   nudge();
+  /* 5. hero lasers ---------------------------------------------- */
+  /* Two emitters in the top corners throwing beams that cross through the
+     middle, drawn additively so the crossings brighten the way real beams
+     do in haze. Canvas, so there is no asset to download. Idle when the
+     tab is hidden, when the hero is scrolled away, or when the visitor
+     asks for reduced motion (they get a single still frame instead). */
+  var laserCanvas = document.querySelector('.hero-lasers');
+  if (laserCanvas && laserCanvas.getContext) {
+    (function () {
+      var ctx = laserCanvas.getContext('2d');
+      var W = 0, H = 0;
+      var t = reduceMotion ? 3.1 : 0;
+      var running = false;
+      var visible = true;
+      var raf = null;
+      var last = 0;
+
+      function beam(x, y, angle, len, spread, alpha) {
+        if (alpha <= 0.004) return;
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(angle);
+
+        var g = ctx.createLinearGradient(0, 0, len, 0);
+        g.addColorStop(0, 'rgba(177,239,128,' + (alpha * 0.55).toFixed(4) + ')');
+        g.addColorStop(0.28, 'rgba(121,178,84,' + (alpha * 0.34).toFixed(4) + ')');
+        g.addColorStop(1, 'rgba(121,178,84,0)');
+        ctx.beginPath();
+        ctx.moveTo(0, -1.6);
+        ctx.lineTo(len, -spread);
+        ctx.lineTo(len, spread);
+        ctx.lineTo(0, 1.6);
+        ctx.closePath();
+        ctx.fillStyle = g;
+        ctx.fill();
+
+        var core = ctx.createLinearGradient(0, 0, len, 0);
+        core.addColorStop(0, 'rgba(226,255,199,' + (alpha * 0.75).toFixed(4) + ')');
+        core.addColorStop(0.5, 'rgba(177,239,128,' + (alpha * 0.22).toFixed(4) + ')');
+        core.addColorStop(1, 'rgba(177,239,128,0)');
+        ctx.beginPath();
+        ctx.moveTo(0, -0.9);
+        ctx.lineTo(len, -spread * 0.16);
+        ctx.lineTo(len, spread * 0.16);
+        ctx.lineTo(0, 0.9);
+        ctx.closePath();
+        ctx.fillStyle = core;
+        ctx.fill();
+
+        ctx.restore();
+      }
+
+      function glow(x, y, radius, alpha) {
+        var g = ctx.createRadialGradient(x, y, 0, x, y, radius);
+        g.addColorStop(0, 'rgba(177,239,128,' + (alpha * 0.5).toFixed(4) + ')');
+        g.addColorStop(0.4, 'rgba(121,178,84,' + (alpha * 0.16).toFixed(4) + ')');
+        g.addColorStop(1, 'rgba(121,178,84,0)');
+        ctx.fillStyle = g;
+        ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+      }
+
+      var RIGS = [
+        { fx: 0.08, base: 0.62, swing: 0.36, phase: 0 },
+        { fx: 0.92, base: Math.PI - 0.62, swing: -0.36, phase: 1.9 }
+      ];
+
+      function draw() {
+        if (!W || !H) return;
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.fillStyle = '#090a09';
+        ctx.fillRect(0, 0, W, H);
+        ctx.globalCompositeOperation = 'lighter';
+
+        var hz = ctx.createRadialGradient(W * 0.5, H * 0.06, 0, W * 0.5, H * 0.06, H * 1.25);
+        var ha = 0.1 + Math.sin(t * 0.6) * 0.022;
+        hz.addColorStop(0, 'rgba(121,178,84,' + ha.toFixed(4) + ')');
+        hz.addColorStop(1, 'rgba(121,178,84,0)');
+        ctx.fillStyle = hz;
+        ctx.fillRect(0, 0, W, H);
+
+        var len = Math.max(W, H) * 1.7;
+        for (var r = 0; r < RIGS.length; r++) {
+          var rig = RIGS[r];
+          var ox = W * rig.fx, oy = -H * 0.05;
+          glow(ox, oy + H * 0.05, H * 0.5, 0.5);
+          for (var i = 0; i < 8; i++) {
+            var f = (i / 7) - 0.5;
+            var angle = rig.base
+              + Math.sin(t * 0.3 + rig.phase) * rig.swing
+              + f * 0.62
+              + Math.sin(t * 0.9 + i * 1.1 + rig.phase) * 0.02;
+            var flick = 0.5 + 0.5 * Math.sin(t * 1.3 + i * 2.2 + rig.phase);
+            beam(ox, oy, angle, len, H * 0.07, 0.26 + flick * 0.36);
+          }
+        }
+        ctx.globalCompositeOperation = 'source-over';
+      }
+
+      function resize() {
+        var rect = laserCanvas.getBoundingClientRect();
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        W = Math.max(1, Math.round(rect.width));
+        H = Math.max(1, Math.round(rect.height));
+        laserCanvas.width = Math.round(W * dpr);
+        laserCanvas.height = Math.round(H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        draw();
+      }
+
+      function frame(now) {
+        if (!running) { raf = null; return; }
+        raf = window.requestAnimationFrame(frame);
+        if (!last) last = now;
+        t += Math.min((now - last) / 1000, 0.05);
+        last = now;
+        draw();
+      }
+
+      function start() {
+        if (running || reduceMotion || document.hidden || !visible) return;
+        running = true;
+        last = 0;
+        raf = window.requestAnimationFrame(frame);
+      }
+
+      function stop() {
+        running = false;
+        if (raf) { window.cancelAnimationFrame(raf); raf = null; }
+      }
+
+      window.addEventListener('resize', resize);
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) stop(); else start();
+      });
+
+      if (window.IntersectionObserver) {
+        new IntersectionObserver(function (entries) {
+          visible = entries[0].isIntersecting;
+          if (visible) start(); else stop();
+        }, { threshold: 0 }).observe(laserCanvas);
+      }
+
+      resize();
+      start();
+    })();
+  }
+
 })();
