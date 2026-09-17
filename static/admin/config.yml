@@ -65,11 +65,8 @@ collections:
         fields:
           - { name: title, label: Browser tab title, widget: string }
           - { name: description, label: Search engine description, widget: text }
-          - { name: introEyebrow, label: Small line at the top, widget: string }
-          - { name: introHeading, label: Page heading, widget: text }
-          - { name: introCopy, label: Opening paragraph, widget: text }
-          - { name: comingUpEyebrow, label: "Coming up — small line", widget: string }
-          - { name: comingUpHeading, label: "Coming up — heading", widget: text }
+          - { name: comingUpEyebrow, label: "Coming up - small line", widget: string }
+          - { name: comingUpHeading, label: "Coming up - page heading", widget: text }
           - name: photos
             label: Photo pair
             widget: list
@@ -224,6 +221,8 @@ collections:
               - { name: copy, label: Details, widget: text }
               - { name: buttonLabel, label: Button text, widget: string }
               - { name: buttonHref, label: Button link, widget: string }
+              - { name: poster, label: Event poster, widget: image, required: false, hint: "Shown beside the event details. Leave empty for no poster." }
+              - { name: posterAlt, label: Poster description, widget: string, required: false, hint: "For screen readers, e.g. Sonido Origins event poster" }
 
   - name: nights
     label: Past nights

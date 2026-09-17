@@ -9,7 +9,7 @@
   "footerCopyright": "© 2026 SONIDO EVENTS",
   "footerLocation": "MELBOURNE / NAARM",
   "footerServices": "EVENTS · PRODUCTION · EQUIPMENT HIRE",
-  "footerFollowLabel": "Follow the frequency",
+  "footerFollowLabel": "Follow us",
   "url": "https://sonidoevents.com",
   "areaServed": "Melbourne, Victoria, Australia",
   "ogImage": "/assets/og-card.jpg",
@@ -27,7 +27,7 @@
     },
     {
       "name": "Event production",
-      "description": "Full event production for parties and pop-up events in Melbourne — sound, setup and the gear to run the night."
+      "description": "Full event production for parties and pop-up events in Melbourne. Sound, setup and the gear to run the night."
     }
   ]
 }

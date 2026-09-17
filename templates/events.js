@@ -1,31 +1,18 @@
 'use strict';
-const { esc, lines, button, layout, signupSection } = require('./layout.js');
+const { esc, lines, button, eventRow, layout, signupSection } = require('./layout.js');
 
 module.exports = function events({ site, content, upcoming }) {
   const page = content.events;
 
-  const eventRows = upcoming.events.map((ev) => `<div class="event-row">
-  <div>
-    <div class="date">${esc(ev.dateDisplay)}</div>
-    <p>${lines(ev.dayLine)}</p>
-  </div>
-  <div>
-    <h3>${esc(ev.heading)}</h3>
-    <p>${lines(ev.copy)}</p>
-  </div>
-  ${button(ev.buttonLabel, ev.buttonHref, { external: /^https?:/.test(ev.buttonHref) })}
-</div>`).join('\n');
+  const eventRows = upcoming.events.map(eventRow).join('\n');
 
-  const body = `<section class="page-intro">
-  <span class="eyebrow green">${esc(page.introEyebrow)}</span>
-  <h1 class="page-title">${lines(page.introHeading)}</h1>
-  <p>${esc(page.introCopy)}</p>
-</section>
-<section class="section">
+  /* The coming-up block leads the page, so its heading carries the h1.
+     There is no separate intro section above it any more. */
+  const body = `<section class="section section-lead">
   <div class="section-head">
     <div>
       <span class="eyebrow green">${esc(page.comingUpEyebrow)}</span>
-      <h2>${lines(page.comingUpHeading)}</h2>
+      <h1 class="page-title">${lines(page.comingUpHeading)}</h1>
     </div>
   </div>
 ${eventRows}
@@ -43,10 +30,5 @@ ${eventRows}
 </section>
 ${signupSection(content.signup)}`;
 
-  return layout({
-    site, page, current: '/events/', body,
-    contactHref: site.instagramEvents,
-    instaHref: site.instagramEvents,
-    instaHandle: site.instagramEventsHandle,
-  });
+  return layout({ site, page, current: '/events/', body });
 };

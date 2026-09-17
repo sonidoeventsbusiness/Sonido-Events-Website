@@ -254,4 +254,31 @@ ${playerHtml ? '\n' + playerHtml + '\n' : ''}
 `;
 }
 
-module.exports = { esc, lines, button, layout, player, tile, signupSection, enquiryForm };
+/* One upcoming-event row. Shared by the homepage and the events page so the
+   two never drift apart. The poster is optional: without one the aside is
+   just the button, exactly as before. */
+const eventRow = (ev) => {
+  const external = /^https?:/.test(ev.buttonHref);
+  const target = external ? ' target="_blank" rel="noopener"' : '';
+  const poster = ev.poster
+    ? `<a class="event-poster" href="${esc(ev.buttonHref)}"${target}>` +
+      `<img src="${esc(ev.poster)}" alt="${esc(ev.posterAlt || ev.heading)}" loading="lazy"></a>`
+    : '';
+  return `<div class="event-row">
+  <div>
+    <div class="date">${esc(ev.dateDisplay)}</div>
+    <p>${lines(ev.dayLine)}</p>
+  </div>
+  <div>
+    <h3>${esc(ev.heading)}</h3>
+    <p>${lines(ev.copy)}</p>
+  </div>
+  <div class="event-aside">
+    ${poster}
+    ${button(ev.buttonLabel, ev.buttonHref, { external })}
+  </div>
+</div>`;
+};
+
+module.exports = { esc, lines, button, eventRow, layout, player, tile, signupSection, enquiryForm };
+
