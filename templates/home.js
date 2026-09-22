@@ -70,7 +70,7 @@ ${eventRows}
       <p>${esc(page.productionCopy)}</p>
       ${button(page.productionButtonLabel, '/hire/', { ghost: true })}
       <div class="service-links">
-        ${page.productionLinks.map((l) => `<a href="${esc(l.href)}">${esc(l.label)} <span>↗</span></a>`).join('\n        ')}
+        ${page.productionLinks.map((l) => `<a href="${esc(l.href)}">${esc(l.label)} <span>↗︎</span></a>`).join('\n        ')}
       </div>
     </div>
   </section>
@@ -83,7 +83,7 @@ ${eventRows}
         firstCaption: featured[0].caption,
         firstTime: featured[0].time,
         extraAction:
-          `<a class="button ghost" href="/past-events/" style="padding:11px 16px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;gap:10px">All ${night.clips.length} clips ↗</a>`,
+          `<a class="button ghost" href="/past-events/" style="padding:11px 16px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;gap:10px">All ${night.clips.length} clips ↗︎</a>`,
       })
     : '';
 

@@ -3,7 +3,7 @@ const { esc, lines, button, layout } = require('./layout.js');
 
 /* Where the hire enquiry form lands. */
 module.exports = function thanksEnquiry({ site, content }) {
-  const hire = content.hire;
+  const hire = content.enquiry;
 
   const body = `<section class="page-intro thanks">
   <span class="eyebrow green">${esc(hire.thanksEyebrow)}</span>

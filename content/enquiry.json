@@ -1,0 +1,23 @@
+{
+  "eyebrow": "Enquiries",
+  "heading": "TELL US ABOUT\nYOUR EVENT",
+  "copy": "Send through your date, venue, expected numbers and what you need. We'll come back to you with availability and a quote.",
+  "formIntro": "The more detail you can give us, the more useful our first reply will be.",
+  "formNameLabel": "Your name",
+  "formEmailLabel": "Email address",
+  "formPhoneLabel": "Phone (optional)",
+  "formDateLabel": "Event date",
+  "formVenueLabel": "Venue or suburb",
+  "formGuestsLabel": "Expected guests",
+  "formDetailsLabel": "What do you need?",
+  "formDetailsHint": "Sound, DJ equipment, lighting, full production. Whatever you have in mind.",
+  "formButtonLabel": "Send enquiry",
+  "instagramIntro": "Prefer Instagram? Message us there instead.",
+  "instagramEventsLabel": "Events and bookings",
+  "instagramHireLabel": "Hire and production",
+  "thanksTitle": "Enquiry received | Sonido Events",
+  "thanksEyebrow": "Received",
+  "thanksHeading": "WE'LL BE\nIN TOUCH",
+  "thanksCopy": "Your enquiry has reached our inbox. We'll come back to you with the detail, usually within a couple of days.",
+  "thanksButtonLabel": "Back to the site"
+}

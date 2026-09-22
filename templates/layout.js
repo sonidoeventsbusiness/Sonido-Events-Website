@@ -13,7 +13,12 @@ const esc = (s) =>
 /* Content files use real line breaks; the design wants them as <br>. */
 const lines = (s) => esc(s).replace(/\n/g, '<br>');
 
-const button = (label, href, { ghost = false, arrow = '↗', external = false, style = '' } = {}) =>
+/* U+FE0E pins these to their text glyph. Without it some phones render the
+   arrow as a full-colour emoji, which is not the look. */
+const ARROW = '↗︎';
+const ARROW_DOWN = '↓︎';
+
+const button = (label, href, { ghost = false, arrow = ARROW, external = false, style = '' } = {}) =>
   `<a class="button${ghost ? ' ghost' : ''}" href="${esc(href)}"` +
   (external ? ' target="_blank" rel="noopener"' : '') +
   (style ? ` style="${esc(style)}"` : '') +
@@ -22,7 +27,8 @@ const button = (label, href, { ghost = false, arrow = '↗', external = false, s
 const NAV = [
   { href: '/events/', label: 'Events' },
   { href: '/past-events/', label: 'Past events' },
-  { href: '/hire/', label: 'Production & hire' },
+  { href: '/production/', label: 'Production' },
+  { href: '/hire/', label: 'Hire' },
   { href: '/shop/', label: 'Shop', badge: 'SOON' },
 ];
 
@@ -38,7 +44,7 @@ function header(site, current, contactHref) {
   <button class="menu" aria-expanded="false" aria-controls="navigation">Menu +</button>
   <nav class="nav" id="navigation" aria-label="Main navigation">
 ${items}
-    <a class="contact" href="${esc(contactHref)}" target="_blank" rel="noopener">Get in touch ↗</a>
+    <a class="contact" href="${esc(contactHref)}">Get in touch ${ARROW}</a>
   </nav>
 </header>`;
 }
@@ -48,7 +54,7 @@ function footer(site, instaHref, instaHandle) {
   <div class="foot-top">
     <a href="/" class="foot-brand brand-logo" aria-label="Sonido Events home"><span class="wordmark"></span></a>
     <div class="foot-contact">
-      <a href="${esc(instaHref)}" target="_blank" rel="noopener">${esc(site.footerFollowLabel)}<br><br>${esc(instaHandle)} ↗</a>
+      <a href="${esc(instaHref)}" target="_blank" rel="noopener">${esc(site.footerFollowLabel)}<br><br>${esc(instaHandle)} ${ARROW}</a>
       <a href="mailto:${esc(site.email)}">${esc(site.emailLabel)}<br><br>${esc(site.email)}</a>
     </div>
   </div>
@@ -68,9 +74,9 @@ function player({ count, nightTitle, firstCaption, firstTime, extraAction }) {
     <span data-player-caption>${esc(firstCaption)}</span>
   </div>
   <div class="player-stage">
-    <button class="pbtn" type="button" data-action="prev" aria-label="Previous clip">←</button>
+    <button class="pbtn" type="button" data-action="prev" aria-label="Previous clip">←︎</button>
     <video playsinline controlslist="nodownload" preload="auto"></video>
-    <button class="pbtn" type="button" data-action="next" aria-label="Next clip">→</button>
+    <button class="pbtn" type="button" data-action="next" aria-label="Next clip">→︎</button>
   </div>
   <div class="player-bottom">
     <div class="player-rail"><i></i></div>
@@ -79,7 +85,7 @@ function player({ count, nightTitle, firstCaption, firstTime, extraAction }) {
       <div class="group">
         <button type="button" data-sound>Sound on</button>
         ${extraAction}
-        <button type="button" data-action="close" data-close>Close ✕</button>
+        <button type="button" data-action="close" data-close>Close ✕︎</button>
       </div>
     </div>
   </div>
@@ -102,7 +108,7 @@ function tile(clip, { labelStyle = 'short' } = {}) {
     <video data-src="${esc(clip.loop)}" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
   </span>
   <span class="tile-index">${esc(clip.number)}</span>
-  <span class="tile-label"><b>${esc(clip.time)}</b><span>${esc(clip.caption)} ↗</span></span>
+  <span class="tile-label"><b>${esc(clip.time)}</b><span>${esc(clip.caption)} ${ARROW}</span></span>
 </button>`;
 }
 
@@ -129,7 +135,7 @@ function signupSection(signup, source = 'site') {
       <label class="eyebrow" for="signup-email">${esc(signup.emailLabel)}</label>
       <input id="signup-email" name="email" type="email" required autocomplete="email">
     </div>
-    <button class="button" type="submit">${esc(signup.buttonLabel)} <span class="arrow">↗</span></button>
+    <button class="button" type="submit">${esc(signup.buttonLabel)} <span class="arrow">${ARROW}</span></button>
     <p class="signup-small">${esc(signup.smallPrint)}</p>
   </form>
 </section>`;
@@ -174,9 +180,12 @@ function structuredData(site) {
   return `<script type="application/ld+json">${JSON.stringify(data)}</script>`;
 }
 
-/* The hire enquiry form. Goes to Netlify, which emails it on — so someone
-   without Instagram can still start a conversation. */
-function enquiryForm(hire, instagramHire, instagramHireHandle) {
+/* The enquiry form and the block around it. Used on both the production and
+   the hire pages, feeding one Netlify form; the hidden `source` field says
+   which page it came from. Instagram is offered alongside it, not instead of
+   it, and both accounts are listed because they are answered by different
+   parts of the business. */
+function enquiryForm(enquiry, source) {
   const field = (id, name, label, type = 'text', extra = '') =>
     `    <div class="field">
       <label class="eyebrow" for="enq-${id}">${esc(label)}</label>
@@ -186,26 +195,49 @@ function enquiryForm(hire, instagramHire, instagramHireHandle) {
   return `<form class="enquiry-form" name="enquiry" method="POST" action="/thanks/enquiry/"
       data-netlify="true" data-netlify-honeypot="bot-field">
   <input type="hidden" name="form-name" value="enquiry">
+  <input type="hidden" name="source" value="${esc(source)}">
   <p class="signup-gotcha"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-  <p class="enquiry-intro">${esc(hire.formIntro)}</p>
+  <p class="enquiry-intro">${esc(enquiry.formIntro)}</p>
   <div class="field-grid">
-${field('name', 'name', hire.formNameLabel, 'text', ' required autocomplete="name"')}
-${field('email', 'email', hire.formEmailLabel, 'email', ' required autocomplete="email"')}
-${field('phone', 'phone', hire.formPhoneLabel, 'tel', ' autocomplete="tel"')}
-${field('date', 'event date', hire.formDateLabel, 'date')}
-${field('venue', 'venue', hire.formVenueLabel)}
-${field('guests', 'expected guests', hire.formGuestsLabel, 'number', ' min="1"')}
+${field('name', 'name', enquiry.formNameLabel, 'text', ' required autocomplete="name"')}
+${field('email', 'email', enquiry.formEmailLabel, 'email', ' required autocomplete="email"')}
+${field('phone', 'phone', enquiry.formPhoneLabel, 'tel', ' autocomplete="tel"')}
+${field('date', 'event date', enquiry.formDateLabel, 'date')}
+${field('venue', 'venue', enquiry.formVenueLabel)}
+${field('guests', 'expected guests', enquiry.formGuestsLabel, 'number', ' min="1"')}
   </div>
   <div class="field">
-    <label class="eyebrow" for="enq-details">${esc(hire.formDetailsLabel)}</label>
-    <textarea id="enq-details" name="details" rows="5" placeholder="${esc(hire.formDetailsHint)}"></textarea>
+    <label class="eyebrow" for="enq-details">${esc(enquiry.formDetailsLabel)}</label>
+    <textarea id="enq-details" name="details" rows="5" placeholder="${esc(enquiry.formDetailsHint)}"></textarea>
   </div>
-  <button class="button" type="submit">${esc(hire.formButtonLabel)} <span class="arrow">↗</span></button>
-  <p class="signup-small">${esc(hire.formOrInstagram).replace(esc(instagramHireHandle), `<a href="${esc(instagramHire)}" target="_blank" rel="noopener">${esc(instagramHireHandle)}</a>`)}</p>
+  <button class="button" type="submit">${esc(enquiry.formButtonLabel)} <span class="arrow">${ARROW}</span></button>
 </form>`;
 }
 
+function enquirySection(enquiry, site, source) {
+  return `<section class="section enquiry" id="enquire">
+  <div class="enquiry-copy">
+    <span class="eyebrow green">${esc(enquiry.eyebrow)}</span>
+    <h2>${lines(enquiry.heading)}</h2>
+    <p>${esc(enquiry.copy)}</p>
+    <p class="enquiry-direct">Or email us at
+      <a href="mailto:${esc(site.email)}">${esc(site.email)}</a>.</p>
+    <div class="enquiry-socials">
+      <span class="eyebrow">${esc(enquiry.instagramIntro)}</span>
+      <a href="${esc(site.instagramHire)}" target="_blank" rel="noopener">
+        <b>${esc(site.instagramHireHandle)}</b><span>${esc(enquiry.instagramHireLabel)}</span> ${ARROW}</a>
+      <a href="${esc(site.instagramEvents)}" target="_blank" rel="noopener">
+        <b>${esc(site.instagramEventsHandle)}</b><span>${esc(enquiry.instagramEventsLabel)}</span> ${ARROW}</a>
+    </div>
+  </div>
+  ${enquiryForm(enquiry, source)}
+</section>`;
+}
+
 function layout({ site, page, current, contactHref, instaHref, instaHandle, body, playerHtml = '', path = '' }) {
+  contactHref = contactHref || '/production/#enquire';
+  instaHref = instaHref || site.instagramEvents;
+  instaHandle = instaHandle || site.instagramEventsHandle;
   const description = page.description || site.defaultDescription;
   const canonical = site.url + (path || current || '/');
   const ogImage = site.url + site.ogImage;
@@ -280,5 +312,5 @@ const eventRow = (ev) => {
 </div>`;
 };
 
-module.exports = { esc, lines, button, eventRow, layout, player, tile, signupSection, enquiryForm };
+module.exports = { esc, lines, button, ARROW, ARROW_DOWN, eventRow, layout, player, tile, signupSection, enquiryForm, enquirySection };
 

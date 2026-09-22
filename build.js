@@ -27,6 +27,8 @@ function loadContent() {
     home: readJson(path.join(dir, 'home.json')),
     events: readJson(path.join(dir, 'events.json')),
     hire: readJson(path.join(dir, 'hire.json')),
+    production: readJson(path.join(dir, 'production.json')),
+    enquiry: readJson(path.join(dir, 'enquiry.json')),
     shop: readJson(path.join(dir, 'shop.json')),
     pastEvents: readJson(path.join(dir, 'past-events.json')),
     signup: readJson(path.join(dir, 'signup.json')),
@@ -110,6 +112,7 @@ function build() {
   const home = require('./templates/home.js');
   const events = require('./templates/events.js');
   const hire = require('./templates/hire.js');
+  const production = require('./templates/production.js');
   const shop = require('./templates/shop.js');
   const pastEvents = require('./templates/past-events.js');
   const thanks = require('./templates/thanks.js');
@@ -119,6 +122,7 @@ function build() {
   written.push(write('.', home({ site, content, upcoming, nights })));
   written.push(write('events', events({ site, content, upcoming })));
   written.push(write('hire', hire({ site, content })));
+  written.push(write('production', production({ site, content })));
   written.push(write('shop', shop({ site, content })));
   written.push(write('thanks', thanks({ site, content })));
   written.push(write(path.join('thanks', 'enquiry'), thanksEnquiry({ site, content })));
@@ -136,7 +140,7 @@ function build() {
   }
 
   // /thanks/ is deliberately absent: it is noindex and has nothing to rank for
-  const routes = ['/', '/events/', '/hire/', '/shop/', '/past-events/']
+  const routes = ['/', '/events/', '/production/', '/hire/', '/shop/', '/past-events/']
     .concat(nightList.map((n) => `/past-events/${n.slug}/`));
   writeSeoFiles(site, routes);
 

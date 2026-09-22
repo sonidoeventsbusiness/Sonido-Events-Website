@@ -1,0 +1,35 @@
+{
+  "title": "Event Production Melbourne | Sonido",
+  "description": "Event production in Melbourne. Sound system design, setup and operation for private, corporate and public events.",
+  "introEyebrow": "Sonido / event production",
+  "introHeading": "EVENT\nPRODUCTION",
+  "introCopy": "We plan and run the technical side of events across Melbourne. Sound, setup and operation, from a single room through to a full warehouse build.",
+  "introButtonLabel": "Make an enquiry",
+  "approachEyebrow": "How it works",
+  "approachHeading": "FROM BRIEF\nTO PACK DOWN",
+  "approachCopy": [
+    "Tell us what you are planning and we will assess the space, the sound requirements and the equipment the event needs.",
+    "We handle specification, delivery, installation and operation on the day, then pack down afterwards. One point of contact for the technical side of the event."
+  ],
+  "servicesEyebrow": "What we cover",
+  "servicesHeading": "SCOPE OF WORK",
+  "services": [
+    {
+      "heading": "Sound system design",
+      "copy": "Specified to the room and the expected numbers, indoor or outdoor."
+    },
+    {
+      "heading": "Setup and operation",
+      "copy": "Installed, tested and operated for the duration of the event."
+    },
+    {
+      "heading": "Equipment supply",
+      "copy": "Audio, DJ equipment and lighting, supplied and configured."
+    }
+  ],
+  "servicesNote": "Scope and pricing are confirmed on enquiry.",
+  "hireEyebrow": "Equipment only",
+  "hireHeading": "JUST NEED THE GEAR?",
+  "hireCopy": "Speakers, DJ equipment and full systems are available on a 24 hour dry hire.",
+  "hireButtonLabel": "See hire packages"
+}

@@ -1,54 +1,107 @@
 {
-  "title": "Event Production & Equipment Hire Melbourne | Sonido",
-  "description": "Event production and equipment hire in Melbourne. Sound systems, DJ setups and full production for parties, pop-ups and private events. Enquire with Sonido.",
-  "introEyebrow": "Sonido / Production & hire",
-  "introHeading": "BRING YOUR\nEVENT TO LIFE.",
-  "introCopy": "Planning a party, a pop-up or something of your own? Sonido does sound system hire, DJ equipment hire and full event production across Melbourne, from warehouse parties to private functions.",
-  "introButtonLabel": "Enquire about your event",
-  "productionEyebrow": "01 / Event production",
-  "productionHeading": "FROM IDEA\nTO DANCEFLOOR.",
-  "productionCopy": [
-    "Tell us what you’re putting on. We’ll work through the space, the sound and the equipment your event needs.",
-    "Warehouse party, backyard, bar or venue. Get in touch to discuss the scope of your event and the production support available."
-  ],
-  "equipmentEyebrow": "02 / Equipment hire",
-  "equipmentHeading": "LET’S TALK SETUP.",
-  "cards": [
+  "title": "PA, Speaker & DJ Equipment Hire Melbourne | Sonido",
+  "description": "Speaker, PA and DJ equipment hire in Melbourne. Priced by crowd size for a 24 hour hire, collection or delivery.",
+  "introEyebrow": "Sonido / equipment hire",
+  "introHeading": "EQUIPMENT\nHIRE",
+  "introCopy": "Audio and DJ equipment for events across Melbourne. Every package is priced for a 24 hour hire and includes stands and cabling.",
+  "introButtonLabel": "Make an enquiry",
+  "packagesEyebrow": "Packages",
+  "packagesHeading": "WHAT WE HIRE OUT",
+  "packagesNote": "24 hour hire. Collection from us, delivery available.",
+  "packages": [
     {
-      "eyebrow": "01 / The sound",
-      "heading": "Sound system hire",
-      "copy": "Share your space and expected crowd so we can discuss a suitable sound setup."
+      "art": "speakers",
+      "heading": "Compact PA",
+      "capacity": "Up to 80 people",
+      "price": "$120",
+      "items": [
+        "Two powered speakers on stands",
+        "Connects to a phone or laptop",
+        "All cabling included"
+      ],
+      "note": "Private functions, small bars, outdoor gatherings."
     },
     {
-      "eyebrow": "02 / The booth",
-      "heading": "DJ equipment hire",
-      "copy": "Send through your DJ rider or the setup you have in mind."
+      "art": "speakers-large",
+      "heading": "Full-range PA",
+      "capacity": "Up to 150 people",
+      "price": "$150",
+      "items": [
+        "Two powered speakers on stands",
+        "Additional headroom for a full room",
+        "All cabling included"
+      ],
+      "note": "Venues, function rooms, larger private events."
     },
     {
-      "eyebrow": "03 / The details",
-      "heading": "Full event production",
-      "copy": "Let us know what else you need and we’ll confirm what’s available."
+      "art": "mixer-mic",
+      "heading": "PA with microphone",
+      "capacity": "Up to 150 people",
+      "price": "$190",
+      "items": [
+        "Everything in the full-range PA",
+        "Audio mixer with multiple inputs",
+        "Wired microphone"
+      ],
+      "note": "Speeches, presentations, live performance, panels."
+    },
+    {
+      "art": "decks",
+      "heading": "DJ setup",
+      "capacity": "Equipment only",
+      "price": "from $180",
+      "items": [
+        "Pioneer XDJ all-in-one unit",
+        "Plays directly from USB",
+        "Booth cabling included"
+      ],
+      "note": "Stock rotates between the RX2, RX3 and XZ. Specific models can be requested, subject to availability."
+    },
+    {
+      "art": "pa-decks",
+      "heading": "PA and DJ setup",
+      "capacity": "Up to 150 people",
+      "price": "$290",
+      "items": [
+        "Two powered speakers on stands",
+        "Pioneer XDJ all-in-one unit",
+        "Complete and ready to run"
+      ],
+      "note": "Our most requested package."
+    },
+    {
+      "art": "full-system",
+      "heading": "Complete system",
+      "capacity": "150+ people",
+      "price": "$520",
+      "items": [
+        "Two subwoofers and two tops",
+        "Pioneer XDJ all-in-one unit",
+        "Full-range output for a dancefloor"
+      ],
+      "note": "Warehouses, large venues and events built around a dancefloor."
     }
   ],
-  "equipmentNote": "Equipment availability and pricing are confirmed on enquiry.",
-  "enquireEyebrow": "Start the conversation",
-  "enquireHeading": "WHAT’S THE PLAN?",
-  "enquireCopy": "Send us your event date, venue, expected guest count and equipment requirements on Instagram.",
-  "enquireButtonLabel": "Enquire with @sonidohire",
-  "formIntro": "Fill this in and it comes straight to our inbox, no Instagram needed. The more you can tell us, the more useful our first reply will be.",
-  "formNameLabel": "Your name",
-  "formEmailLabel": "Email address",
-  "formPhoneLabel": "Phone (optional)",
-  "formDateLabel": "Event date",
-  "formVenueLabel": "Venue or suburb",
-  "formGuestsLabel": "Expected guests",
-  "formDetailsLabel": "What do you need?",
-  "formDetailsHint": "Sound, DJ setup, lighting, full production. Whatever you have in mind.",
-  "formButtonLabel": "Send enquiry",
-  "formOrInstagram": "Prefer Instagram? Message @sonidohire instead.",
-  "thanksTitle": "Enquiry received | Sonido Events",
-  "thanksEyebrow": "Got it",
-  "thanksHeading": "WE'LL BE\nIN TOUCH.",
-  "thanksCopy": "Your enquiry has landed in our inbox. We'll come back to you with the detail, usually within a couple of days.",
-  "thanksButtonLabel": "Back to the site"
+  "elseHeading": "LOOKING FOR\nSOMETHING ELSE?",
+  "elseCopy": "Subwoofers on their own, additional speakers, lighting, or a configuration that isn't listed here. Tell us what your event requires.",
+  "elseButtonLabel": "Enquire here",
+  "termsEyebrow": "Hire terms",
+  "terms": [
+    {
+      "heading": "Hire period",
+      "copy": "All prices are for a 24 hour hire. Longer periods are available on request."
+    },
+    {
+      "heading": "Collection and delivery",
+      "copy": "Collection from us as standard. Delivery is available depending on location and is quoted at the time of enquiry."
+    },
+    {
+      "heading": "Bond",
+      "copy": "A bond equal to the hire price, refunded once the equipment is returned undamaged. Photo ID is taken at collection and deleted on return."
+    },
+    {
+      "heading": "Availability",
+      "copy": "Stock rotates, so prices are shown from. The exact unit is confirmed at the time of booking."
+    }
+  ]
 }

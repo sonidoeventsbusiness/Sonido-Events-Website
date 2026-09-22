@@ -70,7 +70,7 @@ function archiveStrip(others) {
       <span class="eyebrow green">${esc(n.dateLine)}</span>
       <h3>${esc(n.title)}</h3>
       <p>${esc(n.clips.length)} clips · ${esc(n.clips[0].time)} to ${esc(n.clips[n.clips.length - 1].time)}</p>
-      <a href="/past-events/${esc(n.slug)}/">Watch the night ↗</a>
+      <a href="/past-events/${esc(n.slug)}/">Watch the night ↗︎</a>
     </article>`).join('\n    ')}
   </div>
 </section>`;
@@ -91,7 +91,7 @@ module.exports = function pastEvents({ site, content, night, others, isIndex }) 
       <p>${esc(page.heroCopy)}</p>
       <div class="scroll-cue">
         <span>${esc(String(nightCount).padStart(2, '0'))} ${nightCount === 1 ? 'night' : 'nights'} archived · ${esc(night.clips.length)} clips</span>
-        <span>Scroll ↓</span>
+        <span>Scroll ↓︎</span>
       </div>
     </div>
   </section>
@@ -105,7 +105,7 @@ module.exports = function pastEvents({ site, content, night, others, isIndex }) 
       <span class="eyebrow green">${esc(page.outroEyebrow)}</span>
       <h3>${lines(page.outroHeading)}</h3>
     </div>
-    <button class="button" type="button" data-replay>Play all ${esc(night.clips.length)} clips <span class="arrow">↗</span></button>
+    <button class="button" type="button" data-replay>Play all ${esc(night.clips.length)} clips <span class="arrow">↗︎</span></button>
   </section>
 ${isIndex ? archiveStrip(others) : ''}
   <section class="section enquire" style="margin-top:74px">
@@ -123,7 +123,7 @@ ${isIndex ? archiveStrip(others) : ''}
     nightTitle: night.title,
     firstCaption: night.clips[0].caption,
     firstTime: night.clips[0].time,
-    extraAction: '<button type="button" data-action="next">Next ↗</button>',
+    extraAction: '<button type="button" data-action="next">Next ↗︎</button>',
   });
 
   return layout({
