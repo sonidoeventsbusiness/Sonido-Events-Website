@@ -42,6 +42,19 @@ module.exports = function home({ site, content, upcoming, nights }) {
 ${eventRows}
   </section>
 
+  <section class="section production">
+    <div>
+      <span class="eyebrow green">${esc(page.productionEyebrow)}</span>
+      <h2>${lines(page.productionHeading)}</h2>
+    </div>
+    <div class="copy">
+      <p>${esc(page.productionCopy)}</p>
+      <div class="service-links">
+        ${page.productionLinks.map((l) => `<a href="${esc(l.href)}">${esc(l.label)} <span>↗︎</span></a>`).join('\n        ')}
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="last-night">
     <div class="section-head">
       <div>
@@ -61,19 +74,6 @@ ${eventRows}
 
   ${signupSection(content.signup)}
 
-  <section class="section production">
-    <div>
-      <span class="eyebrow green">${esc(page.productionEyebrow)}</span>
-      <h2>${lines(page.productionHeading)}</h2>
-    </div>
-    <div class="copy">
-      <p>${esc(page.productionCopy)}</p>
-      ${button(page.productionButtonLabel, '/hire/', { ghost: true })}
-      <div class="service-links">
-        ${page.productionLinks.map((l) => `<a href="${esc(l.href)}">${esc(l.label)} <span>↗︎</span></a>`).join('\n        ')}
-      </div>
-    </div>
-  </section>
 `;
 
   const playerHtml = featured.length

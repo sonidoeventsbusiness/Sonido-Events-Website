@@ -43,7 +43,6 @@ collections:
           - { name: productionEyebrow, label: "Production — small line", widget: string }
           - { name: productionHeading, label: "Production — heading", widget: text }
           - { name: productionCopy, label: "Production — paragraph", widget: text }
-          - { name: productionButtonLabel, label: "Production — button text", widget: string }
           - name: productionLinks
             label: "Production — small links"
             widget: list

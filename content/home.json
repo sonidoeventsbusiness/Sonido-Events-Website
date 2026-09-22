@@ -26,15 +26,14 @@
   "productionEyebrow": "Your event",
   "productionHeading": "PLANNING YOUR OWN EVENT?",
   "productionCopy": "We can help you craft the perfect event with our wide range of audio, lighting and other miscellaneous equipment. Reach out today!",
-  "productionButtonLabel": "Production & equipment hire",
   "productionLinks": [
     {
-      "label": "Event production",
-      "href": "/hire/#production"
+      "label": "Equipment hire",
+      "href": "/hire/"
     },
     {
-      "label": "Equipment hire",
-      "href": "/hire/#equipment"
+      "label": "Event production",
+      "href": "/production/"
     }
   ]
 }
