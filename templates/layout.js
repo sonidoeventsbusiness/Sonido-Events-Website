@@ -58,6 +58,12 @@ function footer(site, instaHref, instaHandle) {
       <a href="mailto:${esc(site.email)}">${esc(site.emailLabel)}<br><br>${esc(site.email)}</a>
     </div>
   </div>
+  <nav class="foot-links" aria-label="More">
+    <a href="/about/">About</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/production/">Production</a>
+    <a href="/hire/">Equipment hire</a>
+  </nav>
   <div class="foot-bottom">
     <span>${esc(site.footerCopyright)}</span>
     <span>${esc(site.footerLocation)}</span>

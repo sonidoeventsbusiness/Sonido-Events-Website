@@ -1,0 +1,77 @@
+{
+  "title": "FAQ | Equipment Hire & Event Production Melbourne | Sonido",
+  "description": "Common questions about hiring PA, speakers and DJ equipment from Sonido in Melbourne. Hire periods, delivery, bond, and what size system you need.",
+  "introEyebrow": "Sonido / FAQ",
+  "introHeading": "COMMON\nQUESTIONS",
+  "introCopy": "The things people ask most often. If yours isn't here, send us an enquiry and we'll answer it.",
+  "introButtonLabel": "Ask us something",
+  "groups": [
+    {
+      "heading": "Hiring equipment",
+      "items": [
+        {
+          "question": "How long is the hire period?",
+          "answer": "All hire prices are for 24 hours. If you need the equipment for longer, tell us when you enquire and we will work out a rate for the period you need."
+        },
+        {
+          "question": "Do you deliver, or do I collect?",
+          "answer": "Collection from us is standard and is what the listed prices assume. We can deliver depending on where your event is, quoted at the time of enquiry."
+        },
+        {
+          "question": "Is there a bond?",
+          "answer": "Yes. The bond is equal to the hire price and is refunded once the equipment comes back undamaged. We also photograph your ID at collection and delete it when the gear is returned."
+        },
+        {
+          "question": "What happens if something gets damaged?",
+          "answer": "Tell us as soon as you notice. Minor wear is expected and is not charged for. Damage beyond that is assessed against the bond, and we will always show you what we are charging for and why."
+        }
+      ]
+    },
+    {
+      "heading": "Choosing a system",
+      "items": [
+        {
+          "question": "What size PA do I need?",
+          "answer": "As a guide: the compact PA covers up to around 80 people, the full-range PA up to around 150, and the complete system with subwoofers suits anything above that or any event built around a dancefloor. Room size and whether you are indoors or outdoors both matter, so tell us the venue and we will confirm."
+        },
+        {
+          "question": "Do I need subwoofers?",
+          "answer": "For speeches, background music or a small party, no. For a dancefloor, yes. Subwoofers are what make a room feel full rather than just loud."
+        },
+        {
+          "question": "Can I request a specific DJ controller?",
+          "answer": "Our stock rotates between the Pioneer XDJ-RX2, RX3 and XZ. Tell us which one you want when you enquire and we will confirm whether it is free for your date."
+        },
+        {
+          "question": "Can I plug in my own laptop or phone?",
+          "answer": "Yes. Every PA package connects to a phone or laptop and all the cabling is included."
+        }
+      ]
+    },
+    {
+      "heading": "Production and bookings",
+      "items": [
+        {
+          "question": "What is the difference between hire and production?",
+          "answer": "Hire is dry hire: you collect the equipment and run it yourself. Production means we specify the system for the space, deliver it, set it up, operate it during the event and pack it down afterwards."
+        },
+        {
+          "question": "What areas do you cover?",
+          "answer": "Melbourne and the surrounding suburbs. If you are further out, ask and we will tell you whether we can get to you."
+        },
+        {
+          "question": "How far ahead should I book?",
+          "answer": "The earlier the better, particularly for Friday and Saturday nights and through December. That said, it is always worth asking about short notice, because it depends entirely on what is already out."
+        },
+        {
+          "question": "How do I book?",
+          "answer": "Send an enquiry through the form with your date, venue, expected numbers and what you need. You can also message us on Instagram if that is easier."
+        }
+      ]
+    }
+  ],
+  "stillEyebrow": "Still stuck",
+  "stillHeading": "ASK US DIRECTLY",
+  "stillCopy": "If your question isn't answered here, send it through and we will come back to you.",
+  "stillButtonLabel": "Make an enquiry"
+}

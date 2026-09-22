@@ -1,0 +1,25 @@
+{
+  "title": "About | Sonido Events Melbourne",
+  "description": "Sonido is a Melbourne events business running parties and pop-ups, and providing event production and equipment hire.",
+  "introEyebrow": "Sonido / about",
+  "introHeading": "ABOUT\nSONIDO",
+  "introCopy": "Sonido is a Melbourne based speaker and party equipment rental company. We also offer on-site setup, pack down, audio mixing, DJing, maintenance and transportation of equipment. Our inventory covers a wide range of audio-visual equipment for events of all sizes.",
+  "sections": [
+    {
+      "heading": "The parties",
+      "copy": "Replace this with how Sonido started and what the nights are about."
+    },
+    {
+      "heading": "The production side",
+      "copy": "Replace this with how the hire and production work grew out of running your own events."
+    },
+    {
+      "heading": "Who you're dealing with",
+      "copy": "Replace this with who runs Sonido and why someone should trust you with their event."
+    }
+  ],
+  "closingEyebrow": "Work with us",
+  "closingHeading": "PLANNING SOMETHING?",
+  "closingCopy": "Tell us about your event and we will come back to you.",
+  "closingButtonLabel": "Make an enquiry"
+}

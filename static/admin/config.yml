@@ -145,6 +145,57 @@ collections:
               - { name: heading, label: Heading, widget: string }
               - { name: copy, label: Paragraph, widget: text }
 
+      - name: faq
+        label: FAQ page
+        file: content/faq.json
+        fields:
+          - { name: title, label: Browser tab title, widget: string }
+          - { name: description, label: Search engine description, widget: text }
+          - { name: introEyebrow, label: Small line at the top, widget: string }
+          - { name: introHeading, label: Page heading, widget: text }
+          - { name: introCopy, label: Opening paragraph, widget: text }
+          - { name: introButtonLabel, label: Top button text, widget: string }
+          - name: groups
+            label: Question groups
+            label_singular: group
+            widget: list
+            summary: "{{heading}}"
+            fields:
+              - { name: heading, label: Group heading, widget: string }
+              - name: items
+                label: Questions
+                label_singular: question
+                widget: list
+                summary: "{{question}}"
+                fields:
+                  - { name: question, label: Question, widget: string }
+                  - { name: answer, label: Answer, widget: text }
+          - { name: stillEyebrow, label: "Bottom block - small line", widget: string }
+          - { name: stillHeading, label: "Bottom block - heading", widget: text }
+          - { name: stillCopy, label: "Bottom block - paragraph", widget: text }
+          - { name: stillButtonLabel, label: "Bottom block - button text", widget: string }
+
+      - name: about
+        label: About page
+        file: content/about.json
+        fields:
+          - { name: title, label: Browser tab title, widget: string }
+          - { name: description, label: Search engine description, widget: text }
+          - { name: introEyebrow, label: Small line at the top, widget: string }
+          - { name: introHeading, label: Page heading, widget: text }
+          - { name: introCopy, label: Opening paragraph, widget: text }
+          - name: sections
+            label: Sections
+            widget: list
+            summary: "{{heading}}"
+            fields:
+              - { name: heading, label: Heading, widget: string }
+              - { name: copy, label: Paragraph, widget: text }
+          - { name: closingEyebrow, label: "Bottom block - small line", widget: string }
+          - { name: closingHeading, label: "Bottom block - heading", widget: text }
+          - { name: closingCopy, label: "Bottom block - paragraph", widget: text }
+          - { name: closingButtonLabel, label: "Bottom block - button text", widget: string }
+
       - name: enquiry
         label: Enquiry form
         file: content/enquiry.json

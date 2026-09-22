@@ -14,14 +14,9 @@
   [headers.values]
     X-Robots-Tag = "noindex"
 
-# The old Wix site's pages are still in Google's index and these paths no
-# longer exist. Send them somewhere useful instead of a 404 while Google
-# re-crawls. 301 so the new URL is what gets indexed.
-[[redirects]]
-  from = "/about"
-  to = "/production/"
-  status = 301
-
+# /contact was on the old Wix site and is still in Google's index, but does
+# not exist here. Send it to the enquiry form rather than a 404.
+# (/about used to redirect here too; it is a real page again now.)
 [[redirects]]
   from = "/contact"
   to = "/production/#enquire"
