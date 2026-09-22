@@ -228,9 +228,6 @@ collections:
         fields:
           - { name: title, label: Browser tab title, widget: string }
           - { name: description, label: Search engine description, widget: text }
-          - { name: introEyebrow, label: Small line at the top, widget: string }
-          - { name: introHeading, label: Page heading, widget: text }
-          - { name: introCopy, label: Opening paragraph, widget: text }
           - { name: stageEyebrow, label: Small line, widget: string }
           - { name: stageHeading, label: Heading, widget: text }
           - { name: stageNote, label: Note, widget: text }

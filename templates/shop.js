@@ -4,14 +4,10 @@ const { esc, lines, button, layout, signupSection } = require('./layout.js');
 module.exports = function shop({ site, content }) {
   const page = content.shop;
 
-  const body = `<section class="page-intro">
-  <span class="eyebrow green">${esc(page.introEyebrow)}</span>
-  <h1 class="page-title">${lines(page.introHeading)}</h1>
-  <p>${esc(page.introCopy)}</p>
-</section>
-<section class="section shop-stage">
+  /* No intro block: the coming-soon panel is the page, so it carries the h1. */
+  const body = `<section class="section shop-stage section-lead">
   <span class="eyebrow">${esc(page.stageEyebrow)}</span>
-  <h2>${lines(page.stageHeading)}</h2>
+  <h1 class="page-title">${lines(page.stageHeading)}</h1>
   <p class="note">${esc(page.stageNote)}</p>
   ${button(page.stageButtonLabel, site.instagramEvents, { ghost: true, external: true })}
 </section>

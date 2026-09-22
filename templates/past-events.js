@@ -1,24 +1,6 @@
 'use strict';
 const { esc, lines, button, layout, player, tile } = require('./layout.js');
 
-/* Stats are derived from the clips, so adding a night never means
-   remembering to update a count by hand. */
-function stats(night) {
-  const clips = night.clips;
-  const first = clips[0].time;
-  const last = clips[clips.length - 1].time;
-  const mins = (t) => Number(t.slice(0, 2)) * 60 + Number(t.slice(3, 5));
-  let span = mins(last) - mins(first);
-  if (span < 0) span += 24 * 60; // the night ran past midnight
-  const duration = `${Math.floor(span / 60)}H ${String(span % 60).padStart(2, '0')}M`;
-  return [
-    { value: String(clips.length), label: 'Clips from the floor' },
-    { value: first, label: 'First frame' },
-    { value: last, label: 'Last frame' },
-    { value: duration, label: 'Of it on tape' },
-  ];
-}
-
 function nightSection(night, index) {
   const number = String(index + 1).padStart(2, '0');
   const eyebrow = night.eyebrow || `${number} / ${night.title}`;
@@ -30,9 +12,6 @@ function nightSection(night, index) {
       <h2>${esc(night.title)}</h2>
     </div>
     <span class="eyebrow">${esc(night.dateLine)}<br>${esc(night.location)}</span>
-  </div>
-  <div class="stats">
-    ${stats(night).map((s) => `<div class="stat"><b>${esc(s.value)}</b><span>${esc(s.label)}</span></div>`).join('\n    ')}
   </div>
 </section>
 
