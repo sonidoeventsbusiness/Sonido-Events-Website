@@ -248,6 +248,7 @@ function layout({ site, page, current, contactHref, instaHref, instaHandle, body
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="${esc(site.themeColor)}">
+<meta name="google-site-verification" content="6JAvO1aT0wSGbATEVGo33qXtcUNv4yQqI6rE3Ql7Sf0">
 <meta name="description" content="${esc(description)}">
 <title>${esc(page.title)}</title>
 <link rel="canonical" href="${esc(canonical)}">${page.noindex ? '\n<meta name="robots" content="noindex">' : ''}

@@ -13,3 +13,16 @@
   for = "/admin/*"
   [headers.values]
     X-Robots-Tag = "noindex"
+
+# The old Wix site's pages are still in Google's index and these paths no
+# longer exist. Send them somewhere useful instead of a 404 while Google
+# re-crawls. 301 so the new URL is what gets indexed.
+[[redirects]]
+  from = "/about"
+  to = "/production/"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/production/#enquire"
+  status = 301
