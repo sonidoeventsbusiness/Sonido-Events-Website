@@ -154,6 +154,8 @@ collections:
                   - { label: DJ controller, value: decks }
                   - { label: Speakers and DJ controller, value: pa-decks }
                   - { label: Subs, tops and DJ controller, value: full-system }
+                  - { label: Single subwoofer, value: sub }
+                  - { label: Two subs with tops, value: subs-tops }
               - { name: items, label: What's included, widget: list, field: { name: item, label: Line, widget: string } }
               - { name: note, label: Note at the bottom, widget: text, required: false }
               - { name: title, label: Package page - browser tab title, widget: string, required: false }

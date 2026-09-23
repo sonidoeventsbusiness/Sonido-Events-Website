@@ -98,6 +98,42 @@
       "description": "PA hire with a mixer and wired microphone for speeches, presentations and live performance. Up to 150 people, 24 hour hire in Melbourne."
     },
     {
+      "slug": "subwoofer",
+      "category": "pa-speakers",
+      "heading": "18 inch subwoofer",
+      "capacity": "Add-on",
+      "price": "$150",
+      "art": "sub",
+      "photo": "",
+      "photoAlt": "",
+      "items": [
+        "One 18 inch subwoofer",
+        "Adds low end to any of our PA packages",
+        "All cabling included"
+      ],
+      "note": "For when the speakers alone are not enough bass.",
+      "title": "18 Inch Subwoofer Hire Melbourne | Sonido",
+      "description": "Hire a single 18 inch subwoofer in Melbourne for $150. Adds low end to any PA. 24 hour hire, delivery and setup available."
+    },
+    {
+      "slug": "full-sound-system",
+      "category": "pa-speakers",
+      "heading": "Full sound system",
+      "capacity": "Up to 600 people",
+      "price": "$400",
+      "art": "subs-tops",
+      "photo": "",
+      "photoAlt": "",
+      "items": [
+        "Two top speakers",
+        "Two subwoofers",
+        "All cabling included"
+      ],
+      "note": "Big rooms, warehouses and outdoor events. Add a DJ setup if you need one.",
+      "title": "Sound System Hire Melbourne | Up to 600 People | Sonido",
+      "description": "Two tops and two subwoofers for up to 600 people. Full sound system hire in Melbourne for $400, 24 hour hire with delivery and setup available."
+    },
+    {
       "slug": "dj-setup",
       "category": "dj-equipment",
       "heading": "DJ setup",

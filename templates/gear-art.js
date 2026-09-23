@@ -102,6 +102,31 @@ const ART = {
   </g>
   ${HL}<path d="M70 52h14M70 62h22M130 52h-14M130 62h-22"></path></g>
 </svg>`,
+  sub: `${OPEN}"A single subwoofer">
+  ${G}
+    <rect x="58" y="34" width="84" height="92" rx="3"></rect>
+    <circle cx="100" cy="80" r="31"></circle>
+    <circle cx="100" cy="80" r="11"></circle>
+    <path d="M66 126v6M134 126v6"></path>
+  </g>
+  ${HL}<path d="M34 64h14M28 80h20M34 96h14M166 64h-14M172 80h-20M166 96h-14"></path></g>
+</svg>`,
+
+  'subs-tops': `${OPEN}"Two subwoofers with a top speaker on each">
+  ${G}
+    <rect x="22" y="80" width="52" height="46" rx="2"></rect>
+    <circle cx="48" cy="103" r="15"></circle>
+    <path d="M30 32h36l4 46H26z"></path>
+    <circle cx="48" cy="58" r="10"></circle>
+    <circle cx="48" cy="41" r="4.5"></circle>
+    <rect x="126" y="80" width="52" height="46" rx="2"></rect>
+    <circle cx="152" cy="103" r="15"></circle>
+    <path d="M134 32h36l4 46h-44z"></path>
+    <circle cx="152" cy="58" r="10"></circle>
+    <circle cx="152" cy="41" r="4.5"></circle>
+  </g>
+  ${HL}<path d="M86 50h12M86 62h20M86 74h12M114 50h-12M114 62h-20M114 74h-12"></path></g>
+</svg>`,
 };
 
 /* An unknown key must never break the build — the editor can add a package
