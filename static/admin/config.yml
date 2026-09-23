@@ -107,6 +107,19 @@ collections:
           - { name: introHeading, label: Page heading, widget: text }
           - { name: introCopy, label: Opening paragraph, widget: text }
           - { name: introButtonLabel, label: Top button text, widget: string }
+          - name: categories
+            label: Categories (the Hire dropdown menu)
+            label_singular: category
+            widget: list
+            summary: "{{name}}"
+            hint: "Each category gets its own page at /hire/slug/ and appears in the Hire dropdown. Packages are linked to a category by its slug."
+            fields:
+              - { name: slug, label: "Web address (slug)", widget: string, hint: "Lowercase and dashes only, e.g. pa-speakers. Changing it changes the page address and breaks old links." }
+              - { name: name, label: Name in the menu, widget: string }
+              - { name: heading, label: Page heading, widget: text }
+              - { name: copy, label: Page paragraph, widget: text }
+              - { name: title, label: Browser tab title, widget: string }
+              - { name: description, label: Search engine description, widget: text }
           - { name: packagesEyebrow, label: "Packages - small line", widget: string }
           - { name: packagesHeading, label: "Packages - heading", widget: text }
           - { name: packagesNote, label: "Packages - note beside the heading", widget: text }
@@ -117,10 +130,21 @@ collections:
             summary: "{{heading}} - {{price}}"
             fields:
               - { name: heading, label: Package name, widget: string }
+              - { name: slug, label: "Web address (slug)", widget: string, hint: "Lowercase and dashes only, e.g. compact-pa. The page lives at /hire/slug/. Changing it breaks old links." }
+              - name: category
+                label: Category
+                widget: select
+                options:
+                  - { label: PA and speakers, value: pa-speakers }
+                  - { label: DJ equipment, value: dj-equipment }
+                  - { label: Full systems, value: full-systems }
+                  - { label: Lighting, value: lighting }
               - { name: capacity, label: Crowd size, widget: string, hint: "e.g. Up to 80 people" }
               - { name: price, label: Price, widget: string, hint: "e.g. $120, or from $180" }
+              - { name: photo, label: Photo, widget: image, required: false, hint: "A real photo of this setup. Leave empty to show the line drawing instead." }
+              - { name: photoAlt, label: Photo description, widget: string, required: false, hint: "What the photo shows, for screen readers and Google" }
               - name: art
-                label: Picture
+                label: Drawing (used when there is no photo)
                 widget: select
                 default: speakers
                 options:
@@ -132,6 +156,33 @@ collections:
                   - { label: Subs, tops and DJ controller, value: full-system }
               - { name: items, label: What's included, widget: list, field: { name: item, label: Line, widget: string } }
               - { name: note, label: Note at the bottom, widget: text, required: false }
+              - { name: title, label: Package page - browser tab title, widget: string, required: false }
+              - { name: description, label: Package page - search engine description, widget: text, required: false }
+          - { name: whyEyebrow, label: "Why Sonido - small line", widget: string }
+          - { name: whyHeading, label: "Why Sonido - heading", widget: text }
+          - { name: whyCopy, label: "Why Sonido - paragraphs", widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: galleryEyebrow, label: "Photos - small line", widget: string }
+          - name: gallery
+            label: Photos of the gear at our events
+            label_singular: photo
+            widget: list
+            required: false
+            hint: "The photo section only shows once at least one photo is added."
+            fields:
+              - { name: image, label: Photo, widget: image }
+              - { name: alt, label: Photo description, widget: string }
+              - { name: caption, label: Caption, widget: string, required: false }
+          - { name: servicesEyebrow, label: "Extra help - small line", widget: string }
+          - { name: servicesHeading, label: "Extra help - heading", widget: text }
+          - name: services
+            label: Extra help
+            label_singular: service
+            widget: list
+            summary: "{{heading}}"
+            fields:
+              - { name: heading, label: Heading, widget: string }
+              - { name: copy, label: Paragraph, widget: text }
+          - { name: servicesButtonLabel, label: "Extra help - button text", widget: string }
           - { name: elseHeading, label: "Something else - heading", widget: text }
           - { name: elseCopy, label: "Something else - paragraph", widget: text }
           - { name: elseButtonLabel, label: "Something else - button text", widget: string }
@@ -143,6 +194,13 @@ collections:
             fields:
               - { name: heading, label: Heading, widget: string }
               - { name: copy, label: Paragraph, widget: text }
+          - { name: bundleBackLabel, label: "Package pages - link back to all packages", widget: string }
+          - { name: bundleIncludedLabel, label: "Package pages - label above the list", widget: string }
+          - { name: bundleTermsLine, label: "Package pages - short terms line", widget: text }
+          - { name: bundleButtonLabel, label: "Package pages - button text", widget: string }
+          - { name: bundleRelatedHeading, label: "Package pages - other options heading", widget: text }
+          - { name: categoryEmptyCopy, label: "Category with no packages - paragraph", widget: text }
+          - { name: categoryButtonLabel, label: "Category pages - button text", widget: string }
 
       - name: faq
         label: FAQ page

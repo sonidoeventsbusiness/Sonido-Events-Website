@@ -3,85 +3,180 @@
   "description": "Speaker, PA and DJ equipment hire in Melbourne. Priced by crowd size for a 24 hour hire, collection or delivery.",
   "introEyebrow": "Sonido / equipment hire",
   "introHeading": "EQUIPMENT\nHIRE",
-  "introCopy": "Audio and DJ equipment for events across Melbourne. Every package is priced for a 24 hour hire and includes stands and cabling.",
+  "introCopy": "We run our own parties on the same equipment we hire out, so we know what a room needs to sound right. Speakers, DJ equipment and full systems for events across Melbourne, priced for a 24 hour hire with stands and cabling included.",
   "introButtonLabel": "Make an enquiry",
+  "categories": [
+    {
+      "slug": "pa-speakers",
+      "name": "PA and speakers",
+      "title": "PA and Speaker Hire Melbourne | Sonido",
+      "description": "PA and powered speaker hire in Melbourne for parties, functions and speeches. Priced by crowd size for a 24 hour hire, with delivery and setup available.",
+      "heading": "PA AND\nSPEAKERS",
+      "copy": "Powered speakers on stands, sized to your crowd. Plug in a phone or laptop, or add a mixer and microphone for speeches and live sets."
+    },
+    {
+      "slug": "dj-equipment",
+      "name": "DJ equipment",
+      "title": "DJ Equipment Hire Melbourne | Pioneer XDJ | Sonido",
+      "description": "Pioneer XDJ hire in Melbourne. All-in-one DJ units that play straight from USB, for a 24 hour hire. Add speakers or book a full system.",
+      "heading": "DJ\nEQUIPMENT",
+      "copy": "Pioneer all-in-one units that play straight from USB. The same gear our DJs play on at our own events."
+    },
+    {
+      "slug": "full-systems",
+      "name": "Full systems",
+      "title": "Party Sound System Hire Melbourne | Sonido",
+      "description": "Complete party sound systems in Melbourne. Speakers, subwoofers and DJ equipment for warehouse parties, venues and dancefloors. Delivery and setup available.",
+      "heading": "FULL\nSYSTEMS",
+      "copy": "Speakers and DJ equipment together, ready to run. Built for parties, warehouses and anything with a dancefloor."
+    },
+    {
+      "slug": "lighting",
+      "name": "Lighting",
+      "title": "Party Lighting Hire Melbourne | Sonido",
+      "description": "Lighting hire for parties and events in Melbourne, on its own or alongside a sound system. Tell us about the room and we will put a setup together.",
+      "heading": "LIGHTING",
+      "copy": "Lighting is put together per event, on its own or alongside a sound system. Tell us about the room and the kind of night you are after and we will quote a setup."
+    }
+  ],
   "packagesEyebrow": "Packages",
   "packagesHeading": "WHAT WE HIRE OUT",
-  "packagesNote": "24 hour hire. Collection from us, delivery available.",
+  "packagesNote": "24 hour hire. Collect from us, or we deliver, set up and pack down.",
   "packages": [
     {
-      "art": "speakers",
+      "slug": "compact-pa",
+      "category": "pa-speakers",
       "heading": "Compact PA",
       "capacity": "Up to 80 people",
       "price": "$120",
+      "art": "speakers",
+      "photo": "",
+      "photoAlt": "",
       "items": [
         "Two powered speakers on stands",
         "Connects to a phone or laptop",
         "All cabling included"
       ],
-      "note": "Private functions, small bars, outdoor gatherings."
+      "note": "Private functions, small bars, outdoor gatherings.",
+      "title": "Compact PA Hire Melbourne | Up to 80 People | Sonido",
+      "description": "Two powered speakers on stands for up to 80 people. Connects to a phone or laptop. 24 hour PA hire in Melbourne from $120."
     },
     {
-      "art": "speakers-large",
+      "slug": "full-range-pa",
+      "category": "pa-speakers",
       "heading": "Full-range PA",
       "capacity": "Up to 150 people",
       "price": "$150",
+      "art": "speakers-large",
+      "photo": "",
+      "photoAlt": "",
       "items": [
         "Two powered speakers on stands",
         "Additional headroom for a full room",
         "All cabling included"
       ],
-      "note": "Venues, function rooms, larger private events."
+      "note": "Venues, function rooms, larger private events.",
+      "title": "Full-Range PA Hire Melbourne | Up to 150 People | Sonido",
+      "description": "Two full-range powered speakers for up to 150 people. 24 hour PA hire in Melbourne from $150, with delivery and setup available."
     },
     {
-      "art": "mixer-mic",
+      "slug": "pa-with-microphone",
+      "category": "pa-speakers",
       "heading": "PA with microphone",
       "capacity": "Up to 150 people",
       "price": "$190",
+      "art": "mixer-mic",
+      "photo": "",
+      "photoAlt": "",
       "items": [
         "Everything in the full-range PA",
         "Audio mixer with multiple inputs",
         "Wired microphone"
       ],
-      "note": "Speeches, presentations, live performance, panels."
+      "note": "Speeches, presentations, live performance, panels.",
+      "title": "PA and Microphone Hire Melbourne | Sonido",
+      "description": "PA hire with a mixer and wired microphone for speeches, presentations and live performance. Up to 150 people, 24 hour hire in Melbourne."
     },
     {
-      "art": "decks",
+      "slug": "dj-setup",
+      "category": "dj-equipment",
       "heading": "DJ setup",
       "capacity": "Equipment only",
       "price": "from $180",
+      "art": "decks",
+      "photo": "",
+      "photoAlt": "",
       "items": [
         "Pioneer XDJ all-in-one unit",
         "Plays directly from USB",
         "Booth cabling included"
       ],
-      "note": "Stock rotates between the RX2, RX3 and XZ. Specific models can be requested, subject to availability."
+      "note": "Stock rotates between the RX2, RX3 and XZ. Specific models can be requested, subject to availability.",
+      "title": "Pioneer XDJ Hire Melbourne | DJ Setup | Sonido",
+      "description": "Pioneer XDJ all-in-one hire in Melbourne. RX2, RX3 or XZ, plays straight from USB, booth cabling included. 24 hour hire from $180."
     },
     {
-      "art": "pa-decks",
+      "slug": "pa-and-dj-setup",
+      "category": "full-systems",
       "heading": "PA and DJ setup",
       "capacity": "Up to 150 people",
       "price": "$290",
+      "art": "pa-decks",
+      "photo": "",
+      "photoAlt": "",
       "items": [
         "Two powered speakers on stands",
         "Pioneer XDJ all-in-one unit",
         "Complete and ready to run"
       ],
-      "note": "Our most requested package."
+      "note": "Our most requested package.",
+      "title": "PA and DJ Setup Hire Melbourne | Sonido",
+      "description": "Speakers on stands plus a Pioneer XDJ, complete and ready to run for up to 150 people. Our most requested hire package in Melbourne."
     },
     {
-      "art": "full-system",
+      "slug": "complete-system",
+      "category": "full-systems",
       "heading": "Complete system",
       "capacity": "150+ people",
       "price": "$520",
+      "art": "full-system",
+      "photo": "",
+      "photoAlt": "",
       "items": [
         "Two subwoofers and two tops",
         "Pioneer XDJ all-in-one unit",
         "Full-range output for a dancefloor"
       ],
-      "note": "Warehouses, large venues and events built around a dancefloor."
+      "note": "Warehouses, large venues and events built around a dancefloor.",
+      "title": "Warehouse Party Sound System Hire Melbourne | Sonido",
+      "description": "Two subwoofers, two tops and a Pioneer XDJ for 150+ people. Full-range party sound system hire in Melbourne for warehouses and dancefloors."
     }
   ],
+  "whyEyebrow": "Why Sonido",
+  "whyHeading": "WE RUN OUR\nOWN PARTIES",
+  "whyCopy": [
+    "Sonido runs its own events on the same equipment we hire out. That means we know what a warehouse actually needs, how much power a system draws, and what goes wrong at 3am.",
+    "So when you hire from us you are not just getting a box of gear. Ask us what size system your room needs, where the speakers should go, or whether the power will hold. We have probably dealt with it already."
+  ],
+  "galleryEyebrow": "Our gear at our events",
+  "gallery": [],
+  "servicesEyebrow": "Extra help",
+  "servicesHeading": "WANT US TO\nSET IT UP?",
+  "services": [
+    {
+      "heading": "Delivery, setup and pack down",
+      "copy": "We bring the equipment to your venue, set it up, test it and pack it down afterwards. Quoted on enquiry depending on location."
+    },
+    {
+      "heading": "Consultations and site visits",
+      "copy": "Not sure what you need? We can talk it through or come and look at the space first. Room size, speaker placement, and whether the power will hold."
+    },
+    {
+      "heading": "Someone on the night",
+      "copy": "One of us stays for the event to run the sound, keep levels right and sort out anything that comes up."
+    }
+  ],
+  "servicesButtonLabel": "Ask about setup",
   "elseHeading": "LOOKING FOR\nSOMETHING ELSE?",
   "elseCopy": "Subwoofers on their own, additional speakers, lighting, or a configuration that isn't listed here. Tell us what your event requires.",
   "elseButtonLabel": "Enquire here",
@@ -92,8 +187,8 @@
       "copy": "All prices are for a 24 hour hire. Longer periods are available on request."
     },
     {
-      "heading": "Collection and delivery",
-      "copy": "Collection from us as standard. Delivery is available depending on location and is quoted at the time of enquiry."
+      "heading": "Collection, delivery and setup",
+      "copy": "Collection from us is standard. We can also deliver, set up and pack down, quoted at the time of enquiry depending on location."
     },
     {
       "heading": "Bond",
@@ -103,5 +198,12 @@
       "heading": "Availability",
       "copy": "Stock rotates, so prices are shown from. The exact unit is confirmed at the time of booking."
     }
-  ]
+  ],
+  "bundleBackLabel": "All hire packages",
+  "bundleIncludedLabel": "What's included",
+  "bundleTermsLine": "24 hour hire. Stands and cabling included. Bond equal to the hire price.",
+  "bundleButtonLabel": "Enquire about this package",
+  "bundleRelatedHeading": "OTHER\nOPTIONS",
+  "categoryEmptyCopy": "There are no fixed packages here. Tell us what you need and we will put something together.",
+  "categoryButtonLabel": "Make an enquiry"
 }

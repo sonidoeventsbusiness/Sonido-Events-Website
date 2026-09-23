@@ -32,11 +32,27 @@ const NAV = [
   { href: '/shop/', label: 'Shop', badge: 'SOON' },
 ];
 
-function header(site, current, contactHref) {
+function header(site, current, contactHref, path) {
+  const here = path || current;
   const items = NAV.map((item) => {
-    const active = item.href === current ? ' aria-current="page"' : '';
+    // aria-current="page" only on the exact page; a parent section
+    // (Hire, while on a hire package) is highlighted with a class instead.
+    const active = item.href === here ? ' aria-current="page"'
+      : item.href === current ? ' class="is-parent"' : '';
     const badge = item.badge ? ` <small>${esc(item.badge)}</small>` : '';
-    return `    <a${active} href="${esc(item.href)}">${esc(item.label)}${badge}</a>`;
+    const link = `<a${active} href="${esc(item.href)}">${esc(item.label)}${badge}</a>`;
+
+    // Hire gets a dropdown of its categories. build.js puts them on
+    // site.hireMenu from content/hire.json, so the menu follows the editor.
+    const sub = item.href === '/hire/' && Array.isArray(site.hireMenu) && site.hireMenu.length
+      ? site.hireMenu : null;
+    if (!sub) return `    ${link}`;
+    return `    <div class="nav-drop">
+      ${link}
+      <div class="nav-sub">
+        ${sub.map((c) => `<a${c.href === here ? ' aria-current="page"' : ''} href="${esc(c.href)}">${esc(c.label)}</a>`).join('\n        ')}
+      </div>
+    </div>`;
   }).join('\n');
 
   return `<header class="header">
@@ -280,7 +296,7 @@ ${structuredData(site)}
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-${header(site, current, contactHref)}
+${header(site, current, contactHref, path)}
 
 <main id="main">
 ${body}

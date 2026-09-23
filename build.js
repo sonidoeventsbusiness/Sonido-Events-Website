@@ -98,6 +98,27 @@ function build() {
   const { content, upcoming, nights, nightList } = loadContent();
   const site = content.site;
 
+  // Hire categories and packages each get a flat /hire/<slug>/ page, so every
+  // slug has to be present, URL-safe and unique across both lists.
+  const hireCats = content.hire.categories || [];
+  const hirePacks = content.hire.packages || [];
+  const seen = new Set();
+  for (const item of hireCats.concat(hirePacks)) {
+    const slug = item && item.slug;
+    if (!slug || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) {
+      throw new Error(`Hire item "${(item && (item.name || item.heading)) || '?'}" needs a slug of lowercase letters, numbers and dashes`);
+    }
+    if (seen.has(slug)) throw new Error(`Two hire items share the slug "${slug}"`);
+    seen.add(slug);
+  }
+  for (const p of hirePacks) {
+    if (!hireCats.some((c) => c.slug === p.category)) {
+      console.warn(`  hire package "${p.heading}" has an unknown category "${p.category}" - it gets a page but is not listed`);
+    }
+  }
+  // Derived, not stored: the Hire dropdown in the header.
+  site.hireMenu = hireCats.map((c) => ({ href: `/hire/${c.slug}/`, label: c.name }));
+
   if (!nightList.length) throw new Error('No usable nights in content/nights/ — every night needs at least one clip');
 
   // A previous build is cleared where the filesystem allows it; where it
@@ -126,6 +147,12 @@ function build() {
   written.push(write('.', home({ site, content, upcoming, nights })));
   written.push(write('events', events({ site, content, upcoming })));
   written.push(write('hire', hire({ site, content })));
+  for (const category of hireCats) {
+    written.push(write(path.join('hire', category.slug), hire.categoryPage({ site, content, category })));
+  }
+  for (const pack of hirePacks) {
+    written.push(write(path.join('hire', pack.slug), hire.bundlePage({ site, content, pack })));
+  }
   written.push(write('production', production({ site, content })));
   written.push(write('faq', faq({ site, content })));
   written.push(write('about', about({ site, content })));
@@ -147,6 +174,8 @@ function build() {
 
   // /thanks/ is deliberately absent: it is noindex and has nothing to rank for
   const routes = ['/', '/events/', '/production/', '/hire/', '/faq/', '/about/', '/shop/', '/past-events/']
+    .concat(hireCats.map((c) => `/hire/${c.slug}/`))
+    .concat(hirePacks.map((p) => `/hire/${p.slug}/`))
     .concat(nightList.map((n) => `/past-events/${n.slug}/`));
   writeSeoFiles(site, routes);
 

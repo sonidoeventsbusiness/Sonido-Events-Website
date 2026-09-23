@@ -129,8 +129,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
    the work on its own; this backs it up where the property is supported. */
 .arrow,.contact,.tile-label,.foot-contact a{font-variant-emoji:text}
 .section-aside{color:var(--muted);font-size:13px;max-width:34ch;margin:0;text-align:right}
-.packs{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-.pack{background:var(--bg-2);display:flex;flex-direction:column;padding-bottom:24px}
+.packs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:14px}
+.pack{background:var(--bg-2);border:1px solid var(--line);display:flex;flex-direction:column;padding-bottom:24px}
 .pack-art{color:var(--green);background:radial-gradient(90% 80% at 50% 108%,rgba(121,178,84,.24),rgba(121,178,84,0) 70%),#0c0e0b;border-bottom:1px solid var(--line);aspect-ratio:4/3;max-width:100%;display:flex;align-items:center;justify-content:center;padding:18px}
 .pack-art svg{width:100%;height:100%;max-width:100%}
 .pack-body{padding:20px 20px 0;display:flex;flex-direction:column;gap:11px;flex:1}
@@ -147,6 +147,47 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 .term{background:var(--bg-2);padding:24px 22px}
 .term h3{font:600 12px/1.3 var(--body);letter-spacing:1.3px;text-transform:uppercase;color:var(--green);margin:0 0 9px}
 .term p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.6}
+
+/* --- hire: category links, grouped packages, package pages ------- */
+.hire-cats{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.hire-cats a{border:1px solid var(--line);border-radius:30px;padding:10px 18px;font-size:14px;transition:border-color .2s ease,color .2s ease}
+.hire-cats a:hover,.hire-cats a[aria-current]{border-color:var(--green);color:var(--green)}
+.pack-group+.pack-group{margin-top:54px}
+.pack-group-head{font:700 clamp(30px,3.4vw,44px)/1 var(--display);text-transform:uppercase;letter-spacing:-.01em;margin:0 0 18px}
+.pack-group-head a:hover{color:var(--green)}
+.pack-group-head .arrow{font-size:.6em;vertical-align:.25em;color:var(--green)}
+a.pack{color:inherit;transition:background .2s ease}
+a.pack:hover{background:#161a13}
+a.pack:hover h3{color:var(--green)}
+.pack-more{font-size:13px;font-weight:600;color:var(--green);padding-top:14px;margin-top:auto}
+.pack-note+.pack-more{margin-top:0}
+.pack-enquire{justify-content:center;min-height:220px}
+.pack-art.has-photo,.bundle-art.has-photo{padding:0}
+.pack-art.has-photo img,.bundle-art.has-photo img{width:100%;height:100%;object-fit:cover}
+.bundle{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:5vw;margin-top:34px;align-items:start}
+.bundle-art{color:var(--green);background:radial-gradient(90% 80% at 50% 108%,rgba(121,178,84,.24),rgba(121,178,84,0) 70%),#0c0e0b;border:1px solid var(--line);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:6%;overflow:hidden}
+.bundle-art svg{width:100%;height:100%}
+.bundle-body{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.bundle-title{font:700 clamp(54px,6.5vw,104px)/.9 var(--display);text-transform:uppercase;letter-spacing:-.025em;margin:0}
+.bundle-body .bundle-price{max-width:none;font:700 clamp(46px,4.5vw,64px)/1 var(--display);margin:4px 0 12px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.bundle-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.bundle-list li{font-size:17px;line-height:1.5;padding-left:20px;position:relative}
+.bundle-list li::before{content:'';position:absolute;left:0;top:.72em;width:9px;height:1px;background:var(--green)}
+.bundle-body .bundle-cap{margin:0;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;color:var(--green)}
+.bundle-body .bundle-note,.bundle-body .bundle-terms{margin:0;font-size:15px;line-height:1.6;max-width:480px}
+.bundle-body .bundle-terms{margin-bottom:10px}
+.rig-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.rig-gallery figure{margin:0}
+.rig-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.rig-gallery figcaption{font-size:13px;color:var(--muted);margin-top:10px}
+
+/* --- header dropdown under Hire ---------------------------------- */
+.nav-drop{position:relative}
+.nav a.is-parent{color:var(--green)}
+.nav-sub{position:absolute;top:calc(100% + 16px);left:-18px;pointer-events:none;min-width:210px;padding:14px 0 10px;background:var(--bg);border:1px solid var(--line);display:flex;flex-direction:column;z-index:70;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .15s ease,transform .15s ease,visibility 0s linear .15s}
+.nav-sub::before{content:'';position:absolute;left:0;right:0;top:-17px;height:17px}
+.nav-sub a{padding:9px 18px;white-space:nowrap}
+.nav-drop:hover .nav-sub,.nav-drop:focus-within .nav-sub{opacity:1;visibility:visible;transform:none;pointer-events:auto;transition:opacity .15s ease,transform .15s ease,visibility 0s}
 
 /* --- both Instagram accounts beside the enquiry form ------------- */
 .enquiry-socials{margin-top:34px;display:flex;flex-direction:column;gap:12px;max-width:400px}
@@ -265,6 +306,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   .foot-top{flex-direction:column;align-items:start}
   .foot-bottom{flex-wrap:wrap}
   .page-intro{padding-top:45px}
+  .nav-sub{position:static;opacity:1;visibility:visible;transform:none;pointer-events:auto;border:0;border-left:1px solid var(--line);padding:4px 0 0 16px;margin-top:14px;min-width:0;gap:14px;transition:none}
+  .nav-sub::before{display:none}
+  .nav-sub a{padding:0;color:var(--muted)}
+  .bundle{grid-template-columns:1fr;gap:28px}
+  .cards>*{min-width:0}
+  .card{min-height:0;padding:26px}
+  .card h3{font-size:36px;margin-top:20px;overflow-wrap:break-word}
   .page-title{font-size:20vw}
   .section-aside{text-align:left;max-width:none}
   .photo-pair{gap:12px}
