@@ -139,6 +139,18 @@ collections:
                   - { label: DJ equipment, value: dj-equipment }
                   - { label: Full systems, value: full-systems }
                   - { label: Lighting, value: lighting }
+              - name: alsoIn
+                label: Also show under
+                widget: select
+                multiple: true
+                required: false
+                hint: "Extra categories this package also appears in"
+                options:
+                  - { label: PA and speakers, value: pa-speakers }
+                  - { label: DJ equipment, value: dj-equipment }
+                  - { label: Full systems, value: full-systems }
+                  - { label: Lighting, value: lighting }
+              - { name: addon, label: Add-on, widget: boolean, default: false, required: false, hint: "Add-ons are listed in their category and on its package pages, but get no page of their own" }
               - { name: capacity, label: Crowd size, widget: string, hint: "e.g. Up to 80 people" }
               - { name: price, label: Price, widget: string, hint: "e.g. $120, or from $180" }
               - { name: photo, label: Photo, widget: image, required: false, hint: "A real photo of this setup. Leave empty to show the line drawing instead." }

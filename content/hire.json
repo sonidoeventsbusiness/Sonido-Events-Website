@@ -108,12 +108,13 @@
       "photoAlt": "",
       "items": [
         "One 18 inch subwoofer",
-        "Adds low end to any of our PA packages",
+        "Add to any PA package for more low end",
         "All cabling included"
       ],
       "note": "For when the speakers alone are not enough bass.",
       "title": "18 Inch Subwoofer Hire Melbourne | Sonido",
-      "description": "Hire a single 18 inch subwoofer in Melbourne for $150. Adds low end to any PA. 24 hour hire, delivery and setup available."
+      "description": "Hire a single 18 inch subwoofer in Melbourne for $150. Adds low end to any PA. 24 hour hire, delivery and setup available.",
+      "addon": true
     },
     {
       "slug": "full-sound-system",
@@ -131,7 +132,10 @@
       ],
       "note": "Big rooms, warehouses and outdoor events. Add a DJ setup if you need one.",
       "title": "Sound System Hire Melbourne | Up to 600 People | Sonido",
-      "description": "Two tops and two subwoofers for up to 600 people. Full sound system hire in Melbourne for $400, 24 hour hire with delivery and setup available."
+      "description": "Two tops and two subwoofers for up to 600 people. Full sound system hire in Melbourne for $400, 24 hour hire with delivery and setup available.",
+      "alsoIn": [
+        "full-systems"
+      ]
     },
     {
       "slug": "dj-setup",
@@ -277,5 +281,7 @@
   "bundleButtonLabel": "Enquire about this package",
   "bundleRelatedHeading": "OTHER\nOPTIONS",
   "categoryEmptyCopy": "There are no fixed packages here. Tell us what you need and we will put something together.",
-  "categoryButtonLabel": "Make an enquiry"
+  "categoryButtonLabel": "Make an enquiry",
+  "addonsHeading": "Add-ons",
+  "addonLabel": "Add-on"
 }

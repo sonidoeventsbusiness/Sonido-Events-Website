@@ -176,6 +176,11 @@ a.pack:hover h3{color:var(--green)}
 .bundle-body .bundle-cap{margin:0;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;color:var(--green)}
 .bundle-body .bundle-note,.bundle-body .bundle-terms{margin:0;font-size:15px;line-height:1.6;max-width:480px}
 .bundle-body .bundle-terms{margin-bottom:10px}
+.pack-addon .pack-cap{color:var(--ink);background:var(--line);align-self:flex-start;padding:4px 8px;border-radius:3px}
+.bundle-addons{border-top:1px solid var(--line);padding-top:14px;width:100%;max-width:480px;display:flex;flex-direction:column;gap:8px}
+.bundle-body .bundle-addons p{margin:0;font-size:15px;display:flex;justify-content:space-between;gap:20px;max-width:none}
+.bundle-addons b{font-weight:600;color:var(--ink)}
+.bundle-addons span{color:var(--green);font-weight:600}
 .rig-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
 .rig-gallery figure{margin:0}
 .rig-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover}

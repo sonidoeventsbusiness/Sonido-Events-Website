@@ -112,6 +112,9 @@ function build() {
     seen.add(slug);
   }
   for (const p of hirePacks) {
+    for (const extra of p.alsoIn || []) {
+      if (!hireCats.some((c) => c.slug === extra)) console.warn(`  hire package "${p.heading}" lists unknown extra category "${extra}"`);
+    }
     if (!hireCats.some((c) => c.slug === p.category)) {
       console.warn(`  hire package "${p.heading}" has an unknown category "${p.category}" - it gets a page but is not listed`);
     }
@@ -150,7 +153,7 @@ function build() {
   for (const category of hireCats) {
     written.push(write(path.join('hire', category.slug), hire.categoryPage({ site, content, category })));
   }
-  for (const pack of hirePacks) {
+  for (const pack of hire.pagedPacks(content.hire)) {
     written.push(write(path.join('hire', pack.slug), hire.bundlePage({ site, content, pack })));
   }
   written.push(write('production', production({ site, content })));
@@ -175,7 +178,7 @@ function build() {
   // /thanks/ is deliberately absent: it is noindex and has nothing to rank for
   const routes = ['/', '/events/', '/production/', '/hire/', '/faq/', '/about/', '/shop/', '/past-events/']
     .concat(hireCats.map((c) => `/hire/${c.slug}/`))
-    .concat(hirePacks.map((p) => `/hire/${p.slug}/`))
+    .concat(hirePacks.filter((p) => !p.addon).map((p) => `/hire/${p.slug}/`))
     .concat(nightList.map((n) => `/past-events/${n.slug}/`));
   writeSeoFiles(site, routes);
 

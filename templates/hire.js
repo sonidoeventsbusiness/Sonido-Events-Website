@@ -17,7 +17,12 @@ const hireLayout = (site, page, path, body) =>
     instaHandle: site.instagramHireHandle,
   });
 
-const packsIn = (hire, cat) => (hire.packages || []).filter((p) => p.category === cat.slug);
+/* A package belongs to its main category, plus any listed in `alsoIn`.
+   Add-ons (like the subwoofer) are listed but get no page of their own. */
+const inCat = (p, slug) => p.category === slug || (Array.isArray(p.alsoIn) && p.alsoIn.includes(slug));
+const packsIn = (hire, cat) => (hire.packages || []).filter((p) => inCat(p, cat.slug))
+  .sort((a, b) => Number(!!a.addon) - Number(!!b.addon)); // add-ons last
+const pagedPacks = (hire) => (hire.packages || []).filter((p) => !p.addon);
 
 /* The picture for a package: a real photo when one has been uploaded,
    otherwise the line drawing. */
@@ -27,7 +32,21 @@ const visual = (p, { eager = false } = {}) =>
     : gearArt(p.art);
 
 /* One package card. The whole card links through to the package's own page. */
-function packCard(p) {
+function packCard(p, hire) {
+  if (p.addon) {
+    return `  <article class="pack pack-addon">
+    <div class="pack-art${p.photo ? ' has-photo' : ''}">${visual(p)}</div>
+    <div class="pack-body">
+      <h3>${esc(p.heading)}</h3>
+      <p class="pack-cap">${esc((hire && hire.addonLabel) || p.capacity)}</p>
+      <p class="pack-price">${esc(p.price)}</p>
+      <ul>
+        ${(p.items || []).map((i) => `<li>${esc(i)}</li>`).join('\n        ')}
+      </ul>
+      ${p.note ? `<p class="pack-note">${esc(p.note)}</p>` : ''}
+    </div>
+  </article>`;
+  }
   return `  <a class="pack" href="/hire/${esc(p.slug)}/">
     <div class="pack-art${p.photo ? ' has-photo' : ''}">${visual(p)}</div>
     <div class="pack-body">
@@ -108,7 +127,7 @@ function hirePage({ site, content }) {
   const groups = (hire.categories || []).map((c) => {
     const packs = packsIn(hire, c);
     const inner = packs.length
-      ? packs.map(packCard).join('\n')
+      ? packs.map((p) => packCard(p, hire)).join('\n')
       : `  <a class="pack pack-enquire" href="/hire/${esc(c.slug)}/">
     <div class="pack-body">
       <p class="pack-note">${esc(hire.categoryEmptyCopy)}</p>
@@ -181,7 +200,7 @@ function categoryPage({ site, content, category }) {
     <p class="section-aside">${esc(hire.packagesNote)}</p>
   </div>
   <div class="packs">
-${packs.map(packCard).join('\n')}
+${packs.map((p) => packCard(p, hire)).join('\n')}
   </div>
 </section>`
     : `<section class="section enquire">
@@ -206,6 +225,16 @@ ${enquirySection(content.enquiry, site, `hire-${category.slug}`)}`;
   return hireLayout(site, page, `/hire/${category.slug}/`, body);
 }
 
+/* Add-ons offered with a package: any add-on in the same category. */
+function addonsFor(hire, pack) {
+  const list = (hire.packages || []).filter((a) => a.addon && inCat(a, pack.category));
+  if (!list.length) return '';
+  return `<div class="bundle-addons">
+        <span class="eyebrow">${esc(hire.addonsHeading)}</span>
+        ${list.map((a) => `<p><b>${esc(a.heading)}</b> <span>${esc(a.price)}</span></p>`).join('\n        ')}
+      </div>`;
+}
+
 /* ---- /hire/<package>/ ----------------------------------------------- */
 function bundlePage({ site, content, pack }) {
   const hire = content.hire;
@@ -216,9 +245,9 @@ function bundlePage({ site, content, pack }) {
   };
 
   // Same category first, topped up from the rest, three at most.
-  const others = (hire.packages || []).filter((p) => p.slug !== pack.slug);
-  const related = others.filter((p) => p.category === pack.category)
-    .concat(others.filter((p) => p.category !== pack.category))
+  const others = pagedPacks(hire).filter((p) => p.slug !== pack.slug);
+  const related = others.filter((p) => inCat(p, pack.category))
+    .concat(others.filter((p) => !inCat(p, pack.category)))
     .slice(0, 3);
 
   const crumb = category
@@ -238,6 +267,7 @@ function bundlePage({ site, content, pack }) {
         ${(pack.items || []).map((i) => `<li>${esc(i)}</li>`).join('\n        ')}
       </ul>
       ${pack.note ? `<p class="bundle-note">${esc(pack.note)}</p>` : ''}
+      ${addonsFor(hire, pack)}
       <p class="bundle-terms">${esc(hire.bundleTermsLine)}</p>
       ${button(hire.bundleButtonLabel, '#enquire', { arrow: ARROW_DOWN })}
     </div>
@@ -251,7 +281,7 @@ ${whySection(hire)}
     <p class="section-aside"><a href="/hire/">${esc(hire.bundleBackLabel)} ${ARROW}</a></p>
   </div>
   <div class="packs">
-${related.map(packCard).join('\n')}
+${related.map((p) => packCard(p, hire)).join('\n')}
   </div>
 </section>
 ${enquirySection(content.enquiry, site, `hire-${pack.slug}`)}`;
@@ -262,3 +292,4 @@ ${enquirySection(content.enquiry, site, `hire-${pack.slug}`)}`;
 module.exports = hirePage;
 module.exports.categoryPage = categoryPage;
 module.exports.bundlePage = bundlePage;
+module.exports.pagedPacks = pagedPacks;
