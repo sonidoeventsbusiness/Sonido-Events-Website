@@ -34,9 +34,9 @@
       "slug": "lighting",
       "name": "Lighting",
       "title": "Party Lighting Hire Melbourne | Sonido",
-      "description": "Lighting hire for parties and events in Melbourne, on its own or alongside a sound system. Tell us about the room and we will put a setup together.",
+      "description": "Party light bar and moving light hire in Melbourne, on its own or alongside a sound system. 24 hour hire from $80.",
       "heading": "LIGHTING",
-      "copy": "Lighting is put together per event, on its own or alongside a sound system. Tell us about the room and the kind of night you are after and we will quote a setup."
+      "copy": "Light bars on their own or alongside a sound system. For something bigger, tell us about the room and we will put a setup together."
     }
   ],
   "packagesEyebrow": "Packages",
@@ -186,6 +186,42 @@
       "note": "Warehouses, large venues and events built around a dancefloor.",
       "title": "Warehouse Party Sound System Hire Melbourne | Sonido",
       "description": "Two subwoofers, two tops and a Pioneer XDJ for 150+ people. Full-range party sound system hire in Melbourne for warehouses and dancefloors."
+    },
+    {
+      "slug": "party-light-bar",
+      "category": "lighting",
+      "heading": "Party light bar",
+      "capacity": "Lighting",
+      "price": "$80",
+      "art": "light-bar",
+      "photo": "",
+      "photoAlt": "",
+      "items": [
+        "One party light bar",
+        "Colour lighting for the room",
+        "All cabling included"
+      ],
+      "note": "The easy way to make a room feel like a party.",
+      "title": "Party Light Bar Hire Melbourne | Sonido",
+      "description": "Party light bar hire in Melbourne for $80. Colour lighting for parties and events, on its own or with a sound system. 24 hour hire."
+    },
+    {
+      "slug": "moving-light-bar",
+      "category": "lighting",
+      "heading": "Moving light bar",
+      "capacity": "Lighting",
+      "price": "$150",
+      "art": "moving-bar",
+      "photo": "",
+      "photoAlt": "",
+      "items": [
+        "One moving light bar",
+        "Moving lights that sweep the room",
+        "All cabling included"
+      ],
+      "note": "For a dancefloor that needs more than static colour.",
+      "title": "Moving Light Bar Hire Melbourne | Sonido",
+      "description": "Moving light bar hire in Melbourne for $150. Moving lights for dancefloors and parties, on its own or with a sound system. 24 hour hire."
     }
   ],
   "whyEyebrow": "Why Sonido",

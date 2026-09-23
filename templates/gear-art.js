@@ -127,6 +127,29 @@ const ART = {
   </g>
   ${HL}<path d="M86 50h12M86 62h20M86 74h12M114 50h-12M114 62h-20M114 74h-12"></path></g>
 </svg>`,
+  'light-bar': `${OPEN}"A party light bar on a stand">
+  ${G}
+    <rect x="34" y="34" width="132" height="26" rx="3"></rect>
+    <circle cx="56" cy="47" r="6"></circle>
+    <circle cx="85" cy="47" r="6"></circle>
+    <circle cx="115" cy="47" r="6"></circle>
+    <circle cx="144" cy="47" r="6"></circle>
+    <path d="M100 60v48M80 132l20-24 20 24"></path>
+  </g>
+  ${HL}<path d="M56 64l-8 20M85 64l-4 22M115 64l4 22M144 64l8 20"></path></g>
+</svg>`,
+
+  'moving-bar': `${OPEN}"A moving light bar on a stand">
+  ${G}
+    <rect x="30" y="58" width="140" height="14" rx="3"></rect>
+    <path d="M44 58v-8h20v8M90 58v-8h20v8M136 58v-8h20v8"></path>
+    <rect x="44" y="30" width="20" height="20" rx="4" transform="rotate(-18 54 40)"></rect>
+    <rect x="90" y="30" width="20" height="20" rx="4"></rect>
+    <rect x="136" y="30" width="20" height="20" rx="4" transform="rotate(18 146 40)"></rect>
+    <path d="M100 72v36M80 132l20-24 20 24"></path>
+  </g>
+  ${HL}<path d="M46 28l-18-18M100 28V6M154 28l18-18"></path></g>
+</svg>`,
 };
 
 /* An unknown key must never break the build — the editor can add a package
