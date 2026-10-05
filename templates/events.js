@@ -1,10 +1,10 @@
 'use strict';
-const { esc, lines, button, eventRow, layout, signupSection } = require('./layout.js');
+const { esc, lines, button, eventRowsOrEmpty, layout, signupSection } = require('./layout.js');
 
 module.exports = function events({ site, content, upcoming }) {
   const page = content.events;
 
-  const eventRows = upcoming.events.map(eventRow).join('\n');
+  const eventRows = eventRowsOrEmpty(upcoming);
 
   /* The coming-up block leads the page, so its heading carries the h1.
      There is no separate intro section above it any more. */

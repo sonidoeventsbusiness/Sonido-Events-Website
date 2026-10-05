@@ -1,14 +1,6 @@
 {
-  "events": [
-    {
-      "dateDisplay": "02 / 10",
-      "dayLine": "FRIDAY · 2026",
-      "heading": "Sonido Origins.",
-      "copy": "Barton Fink · 816–818 High St, Thornbury\n7PM til 3AM · 18+ · Strictly BYO\nTwo rooms all night. Rave and chill.\nTommy LiH · Major · AP B2B JOV · Fitzy · ROSAX\nKortx · STRIDE B2B TRIBAL · FLO-RO\nFree on the list. Walk-ins pay at the door.",
-      "buttonLabel": "Free tickets",
-      "buttonHref": "https://ra.co/events/2535592",
-      "poster": "",
-      "posterAlt": "Sonido Origins event poster"
-    }
-  ]
+  "events": [],
+  "emptyHeading": "Nothing announced yet",
+  "emptyCopy": "The next one is in the works. Join the email list and you will hear about it before it goes public.",
+  "emptyButtonLabel": "Join the email list"
 }

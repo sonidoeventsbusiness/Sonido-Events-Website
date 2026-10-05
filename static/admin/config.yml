@@ -393,6 +393,9 @@ collections:
               - { name: buttonHref, label: Button link, widget: string }
               - { name: poster, label: Event poster, widget: image, required: false, hint: "Shown beside the event details. Leave empty for no poster." }
               - { name: posterAlt, label: Poster description, widget: string, required: false, hint: "For screen readers, e.g. Sonido Origins event poster" }
+          - { name: emptyHeading, label: "When there are no events - heading", widget: string }
+          - { name: emptyCopy, label: "When there are no events - paragraph", widget: text }
+          - { name: emptyButtonLabel, label: "When there are no events - button text", widget: string }
 
   - name: nights
     label: Past nights

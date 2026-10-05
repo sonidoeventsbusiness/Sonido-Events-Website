@@ -1,5 +1,5 @@
 'use strict';
-const { esc, lines, button, eventRow, layout, player, tile, signupSection } = require('./layout.js');
+const { esc, lines, button, eventRowsOrEmpty, layout, player, tile, signupSection } = require('./layout.js');
 
 module.exports = function home({ site, content, upcoming, nights }) {
   const page = content.home;
@@ -8,7 +8,7 @@ module.exports = function home({ site, content, upcoming, nights }) {
     .map((n) => night && night.clips.find((c) => Number(c.number) === Number(n)))
     .filter(Boolean);
 
-  const eventRows = upcoming.events.map(eventRow).join('\n');
+  const eventRows = eventRowsOrEmpty(upcoming);
 
   const body = `
   <section class="hero">

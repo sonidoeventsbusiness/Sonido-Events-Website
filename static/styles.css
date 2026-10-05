@@ -427,3 +427,9 @@ a.pack:hover h3{color:var(--green)}
 .about-block p{margin:0;color:var(--muted);line-height:1.7;font-size:15px}
 .foot-links{display:flex;flex-wrap:wrap;gap:26px;padding:26px 0;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
 .foot-links a:hover{color:var(--green)}
+
+/* --- no upcoming events ------------------------------------------ */
+.event-empty{border-top:1px solid var(--line);padding:46px 0 10px;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.event-empty h3{font:700 clamp(30px,4vw,48px)/1 var(--display);text-transform:uppercase;letter-spacing:-.02em;margin:0;color:var(--green)}
+.event-empty p{margin:0;color:var(--muted);line-height:1.7;max-width:48ch}
+.event-empty .button{margin-top:8px}

@@ -335,5 +335,21 @@ const eventRow = (ev) => {
 </div>`;
 };
 
-module.exports = { esc, lines, button, ARROW, ARROW_DOWN, eventRow, layout, player, tile, signupSection, enquiryForm, enquirySection };
+/* The event rows, or — once the last night has been and gone — something
+   useful in their place. Both pages carry the mailing-list block at
+   #signup, so the empty state points at it rather than repeating a second
+   form on the same page. The wording lives in upcoming.json so it can be
+   changed without a deploy. */
+function eventRowsOrEmpty(upcoming) {
+  const events = upcoming.events || [];
+  if (events.length) return events.map(eventRow).join('\n');
+
+  return `<div class="event-empty">
+  <h3>${esc(upcoming.emptyHeading || 'Nothing announced yet')}</h3>
+  <p>${lines(upcoming.emptyCopy || '')}</p>
+  ${button(upcoming.emptyButtonLabel || 'Join the email list', '#signup', { arrow: ARROW_DOWN })}
+</div>`;
+}
+
+module.exports = { esc, lines, button, ARROW, ARROW_DOWN, eventRow, eventRowsOrEmpty, layout, player, tile, signupSection, enquiryForm, enquirySection };
 
