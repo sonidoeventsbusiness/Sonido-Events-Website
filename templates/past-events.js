@@ -11,7 +11,7 @@ function nightSection(night, index) {
       <span class="eyebrow green">${esc(eyebrow)}</span>
       <h2>${esc(night.title)}</h2>
     </div>
-    <span class="eyebrow">${esc(night.dateLine)}<br>${esc(night.location)}</span>
+    <span class="eyebrow">${esc(night.dateLine)}${night.location ? '<br>' + esc(night.location) : ''}</span>
   </div>
 </section>
 
@@ -62,7 +62,7 @@ module.exports = function pastEvents({ site, content, night, others, isIndex }) 
   const body = `
   <section class="film-hero">
     <div class="film-hero-bed" aria-hidden="true">
-      <video src="${esc(night.clips[0].full)}" poster="${esc(night.clips[0].poster)}" muted loop autoplay playsinline preload="metadata"></video>
+      <video src="${esc(night.hero || night.clips[0].full)}" poster="${esc(night.heroPoster || night.clips[0].poster)}" muted loop autoplay playsinline preload="metadata"></video>
     </div>
     <div class="film-hero-inner">
       <span class="eyebrow">${esc(page.heroEyebrow)}</span>

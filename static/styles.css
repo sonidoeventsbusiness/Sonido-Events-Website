@@ -433,3 +433,6 @@ a.pack:hover h3{color:var(--green)}
 .event-empty h3{font:700 clamp(30px,4vw,48px)/1 var(--display);text-transform:uppercase;letter-spacing:-.02em;margin:0;color:var(--green)}
 .event-empty p{margin:0;color:var(--muted);line-height:1.7;max-width:48ch}
 .event-empty .button{margin-top:8px}
+.bundle-seeit{margin:18px 0 0;font-size:14px}
+.bundle-seeit a{color:var(--green);border-bottom:1px solid transparent;padding-bottom:2px}
+.bundle-seeit a:hover{border-bottom-color:var(--green)}

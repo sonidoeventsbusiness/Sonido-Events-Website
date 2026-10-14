@@ -135,7 +135,9 @@
       "description": "Two tops and two subwoofers for up to 600 people. Full sound system hire in Melbourne for $400, 24 hour hire with delivery and setup available.",
       "alsoIn": [
         "full-systems"
-      ]
+      ],
+      "seeItLabel": "See a system like this running",
+      "seeItHref": "/past-events/"
     },
     {
       "slug": "dj-setup",
@@ -189,7 +191,9 @@
       ],
       "note": "Warehouses, large venues and events built around a dancefloor.",
       "title": "Warehouse Party Sound System Hire Melbourne | Sonido",
-      "description": "Two subwoofers, two tops and a Pioneer XDJ for 150+ people. Full-range party sound system hire in Melbourne for warehouses and dancefloors."
+      "description": "Two subwoofers, two tops and a Pioneer XDJ for 150+ people. Full-range party sound system hire in Melbourne for warehouses and dancefloors.",
+      "seeItLabel": "See a system like this running",
+      "seeItHref": "/past-events/"
     },
     {
       "slug": "party-light-bar",
@@ -334,7 +338,9 @@
       ],
       "note": "Our largest setup. Warehouse parties, outdoor events and anything built around a stage. The price covers the equipment only - if you want us to bring it, rig it and run it, ask and we will quote that on top.",
       "title": "Festival Sound and Lighting System Hire Melbourne | Sonido",
-      "description": "Small festival system hire in Melbourne for $900: two subs, two tops, moving lights, lasers, strobes, DJ decks and a mixer. Equipment only, with delivery and setup quoted separately."
+      "description": "Small festival system hire in Melbourne for $900: two subs, two tops, moving lights, lasers, strobes, DJ decks and a mixer. Equipment only, with delivery and setup quoted separately.",
+      "seeItLabel": "See this system at a bush doof",
+      "seeItHref": "/past-events/"
     }
   ],
   "whyEyebrow": "Why Sonido",

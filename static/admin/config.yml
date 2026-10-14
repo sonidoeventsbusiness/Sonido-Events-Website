@@ -172,6 +172,8 @@ collections:
                   - { label: Moving light bar, value: moving-bar }
               - { name: items, label: What's included, widget: list, field: { name: item, label: Line, widget: string } }
               - { name: note, label: Note at the bottom, widget: text, required: false }
+              - { name: seeItLabel, label: "Link to footage - text", widget: string, required: false }
+              - { name: seeItHref, label: "Link to footage - URL", widget: string, required: false, hint: "e.g. /past-events/" }
               - { name: title, label: Package page - browser tab title, widget: string, required: false }
               - { name: description, label: Package page - search engine description, widget: text, required: false }
           - { name: whyEyebrow, label: "Why Sonido - small line", widget: string }

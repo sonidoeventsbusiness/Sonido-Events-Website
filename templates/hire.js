@@ -267,6 +267,9 @@ function bundlePage({ site, content, pack }) {
         ${(pack.items || []).map((i) => `<li>${esc(i)}</li>`).join('\n        ')}
       </ul>
       ${pack.note ? `<p class="bundle-note">${esc(pack.note)}</p>` : ''}
+      ${pack.seeItLabel && pack.seeItHref
+        ? `<p class="bundle-seeit"><a href="${esc(pack.seeItHref)}">${esc(pack.seeItLabel)} ${ARROW}</a></p>`
+        : ''}
       ${addonsFor(hire, pack)}
       <p class="bundle-terms">${esc(hire.bundleTermsLine)}</p>
       ${button(hire.bundleButtonLabel, '#enquire', { arrow: ARROW_DOWN })}

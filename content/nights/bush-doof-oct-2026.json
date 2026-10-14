@@ -1,0 +1,36 @@
+{
+  "slug": "bush-doof-oct-2026",
+  "date": "2026-10-10",
+  "title": "Bush doof",
+  "eyebrow": "01 / The last one",
+  "dateLine": "Saturday 10 October 2026",
+  "location": "",
+  "hero": "/assets/events/bush-doof-oct-2026/hero.mp4",
+  "heroPoster": "/assets/events/bush-doof-oct-2026/hero.jpg",
+  "clips": [
+    {
+      "number": "01",
+      "time": "22:45",
+      "caption": "Out in the trees",
+      "loop": "/assets/events/bush-doof-oct-2026/clip-01-loop.mp4",
+      "full": "/assets/events/bush-doof-oct-2026/clip-01.mp4",
+      "poster": "/assets/events/bush-doof-oct-2026/clip-01.jpg"
+    },
+    {
+      "number": "02",
+      "time": "00:30",
+      "caption": "Deep in it",
+      "loop": "/assets/events/bush-doof-oct-2026/clip-02-loop.mp4",
+      "full": "/assets/events/bush-doof-oct-2026/clip-02.mp4",
+      "poster": "/assets/events/bush-doof-oct-2026/clip-02.jpg"
+    },
+    {
+      "number": "03",
+      "time": "01:12",
+      "caption": "Lasers through the haze",
+      "loop": "/assets/events/bush-doof-oct-2026/clip-03-loop.mp4",
+      "full": "/assets/events/bush-doof-oct-2026/clip-03.mp4",
+      "poster": "/assets/events/bush-doof-oct-2026/clip-03.jpg"
+    }
+  ]
+}
