@@ -214,7 +214,7 @@
       "category": "lighting",
       "heading": "Moving light bar",
       "capacity": "Lighting",
-      "price": "$150",
+      "price": "$120",
       "art": "moving-bar",
       "photo": "",
       "photoAlt": "",
@@ -225,14 +225,14 @@
       ],
       "note": "For a dancefloor that needs more than static colour.",
       "title": "Moving Light Bar Hire Melbourne | Sonido",
-      "description": "Moving light bar hire in Melbourne for $150. Moving lights for dancefloors and parties, on its own or with a sound system. 24 hour hire."
+      "description": "Moving light bar hire in Melbourne for $120. Moving lights for dancefloors and parties, on its own or with a sound system. 24 hour hire."
     },
     {
       "slug": "strobe",
       "category": "lighting",
       "heading": "Strobe",
       "capacity": "Lighting",
-      "price": "$40",
+      "price": "$60",
       "art": "strobe",
       "photo": "",
       "photoAlt": "",
@@ -243,14 +243,14 @@
       ],
       "note": "Used in twos and threes for a dancefloor, one for a smaller room.",
       "title": "Strobe Light Hire Melbourne | Sonido",
-      "description": "Strobe light hire in Melbourne for $40. Adjustable strobe lighting for parties, dancefloors and events. 24 hour hire, collection or delivery."
+      "description": "Strobe light hire in Melbourne for $60. Adjustable strobe lighting for parties, dancefloors and events. 24 hour hire, collection or delivery."
     },
     {
       "slug": "moving-light",
       "category": "lighting",
       "heading": "Moving light",
       "capacity": "Lighting",
-      "price": "$40",
+      "price": "$60",
       "art": "moving-head",
       "photo": "",
       "photoAlt": "",
@@ -261,14 +261,14 @@
       ],
       "note": "A single fixture rather than a bar. Two either side of a booth is the usual setup.",
       "title": "Moving Head Light Hire Melbourne | Sonido",
-      "description": "Moving head light hire in Melbourne for $40. Pan and tilt moving lights for dancefloors, parties and events. 24 hour hire."
+      "description": "Moving head light hire in Melbourne for $60. Pan and tilt moving lights for dancefloors, parties and events. 24 hour hire."
     },
     {
       "slug": "uplighting",
       "category": "lighting",
       "heading": "Up lighting",
       "capacity": "Lighting",
-      "price": "$40",
+      "price": "$60",
       "art": "uplight",
       "photo": "",
       "photoAlt": "",
@@ -279,14 +279,14 @@
       ],
       "note": "Takes a plain room and gives it a colour. Normally run in fours or more around the walls.",
       "title": "Uplighting Hire Melbourne | Sonido",
-      "description": "Uplighting hire in Melbourne for $40 per light. Colour wall washes for parties, weddings and functions. 24 hour hire."
+      "description": "Uplighting hire in Melbourne for $60 per light. Colour wall washes for parties, weddings and functions. 24 hour hire."
     },
     {
       "slug": "mirror-ball-effect",
       "category": "lighting",
       "heading": "Mirror ball effect",
       "capacity": "Lighting",
-      "price": "$40",
+      "price": "$60",
       "art": "mirror-ball",
       "photo": "",
       "photoAlt": "",
@@ -297,14 +297,14 @@
       ],
       "note": "The mirror ball look without hanging an actual ball from the ceiling.",
       "title": "Mirror Ball Effect Light Hire Melbourne | Sonido",
-      "description": "Mirror ball effect light hire in Melbourne for $40. Scattered dot lighting for parties and dancefloors without rigging a real mirror ball."
+      "description": "Mirror ball effect light hire in Melbourne for $60. Scattered dot lighting for parties and dancefloors without rigging a real mirror ball."
     },
     {
       "slug": "laser",
       "category": "lighting",
       "heading": "Laser",
       "capacity": "Lighting",
-      "price": "$40",
+      "price": "$60",
       "art": "laser",
       "photo": "",
       "photoAlt": "",
@@ -315,7 +315,7 @@
       ],
       "note": "Best in a dark room with haze. Two is plenty for most dancefloors.",
       "title": "Laser Hire Melbourne | Sonido",
-      "description": "Laser hire in Melbourne for $40. Beam and pattern lasers for warehouse parties, dancefloors and events. 24 hour hire."
+      "description": "Laser hire in Melbourne for $60. Beam and pattern lasers for warehouse parties, dancefloors and events. 24 hour hire."
     },
     {
       "slug": "festival-system",
