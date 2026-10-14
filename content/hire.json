@@ -226,6 +226,115 @@
       "note": "For a dancefloor that needs more than static colour.",
       "title": "Moving Light Bar Hire Melbourne | Sonido",
       "description": "Moving light bar hire in Melbourne for $150. Moving lights for dancefloors and parties, on its own or with a sound system. 24 hour hire."
+    },
+    {
+      "slug": "strobe",
+      "category": "lighting",
+      "heading": "Strobe",
+      "capacity": "Lighting",
+      "price": "$40",
+      "art": "strobe",
+      "photo": "",
+      "photoAlt": "",
+      "items": [
+        "One strobe light",
+        "Sharp white flash, speed adjustable",
+        "All cabling included"
+      ],
+      "note": "Used in twos and threes for a dancefloor, one for a smaller room.",
+      "title": "Strobe Light Hire Melbourne | Sonido",
+      "description": "Strobe light hire in Melbourne for $40. Adjustable strobe lighting for parties, dancefloors and events. 24 hour hire, collection or delivery."
+    },
+    {
+      "slug": "moving-light",
+      "category": "lighting",
+      "heading": "Moving light",
+      "capacity": "Lighting",
+      "price": "$40",
+      "art": "moving-head",
+      "photo": "",
+      "photoAlt": "",
+      "items": [
+        "One moving head light",
+        "Pans and tilts across the room",
+        "All cabling included"
+      ],
+      "note": "A single fixture rather than a bar. Two either side of a booth is the usual setup.",
+      "title": "Moving Head Light Hire Melbourne | Sonido",
+      "description": "Moving head light hire in Melbourne for $40. Pan and tilt moving lights for dancefloors, parties and events. 24 hour hire."
+    },
+    {
+      "slug": "uplighting",
+      "category": "lighting",
+      "heading": "Up lighting",
+      "capacity": "Lighting",
+      "price": "$40",
+      "art": "uplight",
+      "photo": "",
+      "photoAlt": "",
+      "items": [
+        "One uplight",
+        "Washes a wall or corner in colour",
+        "All cabling included"
+      ],
+      "note": "Takes a plain room and gives it a colour. Normally run in fours or more around the walls.",
+      "title": "Uplighting Hire Melbourne | Sonido",
+      "description": "Uplighting hire in Melbourne for $40 per light. Colour wall washes for parties, weddings and functions. 24 hour hire."
+    },
+    {
+      "slug": "mirror-ball-effect",
+      "category": "lighting",
+      "heading": "Mirror ball effect",
+      "capacity": "Lighting",
+      "price": "$40",
+      "art": "mirror-ball",
+      "photo": "",
+      "photoAlt": "",
+      "items": [
+        "One mirror ball effect light",
+        "Scatters moving dots across the room",
+        "All cabling included"
+      ],
+      "note": "The mirror ball look without hanging an actual ball from the ceiling.",
+      "title": "Mirror Ball Effect Light Hire Melbourne | Sonido",
+      "description": "Mirror ball effect light hire in Melbourne for $40. Scattered dot lighting for parties and dancefloors without rigging a real mirror ball."
+    },
+    {
+      "slug": "laser",
+      "category": "lighting",
+      "heading": "Laser",
+      "capacity": "Lighting",
+      "price": "$40",
+      "art": "laser",
+      "photo": "",
+      "photoAlt": "",
+      "items": [
+        "One laser",
+        "Beams and patterns across the room",
+        "All cabling included"
+      ],
+      "note": "Best in a dark room with haze. Two is plenty for most dancefloors.",
+      "title": "Laser Hire Melbourne | Sonido",
+      "description": "Laser hire in Melbourne for $40. Beam and pattern lasers for warehouse parties, dancefloors and events. 24 hour hire."
+    },
+    {
+      "slug": "festival-system",
+      "category": "full-systems",
+      "heading": "Small festival system",
+      "capacity": "Large events",
+      "price": "$1,000",
+      "art": "festival-system",
+      "photo": "",
+      "photoAlt": "",
+      "items": [
+        "Two subwoofers and two tops",
+        "Two moving lights, two lasers and three strobes",
+        "Pioneer XDJ all-in-one unit and audio mixer",
+        "Everything for a full production in one hire"
+      ],
+      "note": "Our largest setup. Warehouse parties, outdoor events and anything built around a stage.",
+      "title": "Festival Sound and Lighting System Hire Melbourne | Sonido",
+      "description": "Small festival system hire in Melbourne: two subs, two tops, moving lights, lasers, strobes, DJ decks and a mixer. Full sound and lighting in one hire."
     }
   ],
   "whyEyebrow": "Why Sonido",
