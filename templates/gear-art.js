@@ -150,6 +150,77 @@ const ART = {
   </g>
   ${HL}<path d="M46 28l-18-18M100 28V6M154 28l18-18"></path></g>
 </svg>`,
+  strobe: `${OPEN}"Strobe light"${">"}
+  ${G}
+    <rect x="62" y="56" width="76" height="52" rx="3"></rect>
+    <rect x="74" y="68" width="52" height="28" rx="2"></rect>
+    <path d="M70 108v14M130 108v14"></path>
+    <path d="M58 122h84"></path>
+  </g>
+  ${HL}<path d="M100 44V22M74 50L60 30M126 50l14-20M52 70L30 62M148 70l22-8M56 90l-22 8M144 90l22 8"></path></g>
+</svg>`,
+
+  'moving-head': `${OPEN}"Moving head light"${">"}
+  ${G}
+    <path d="M62 128h76M80 128v-14h40v14"></path>
+    <path d="M76 114V86M124 114V86"></path>
+    <path d="M76 86a24 24 0 0 1 48 0"></path>
+    <rect x="80" y="46" width="40" height="42" rx="4"></rect>
+    <circle cx="100" cy="60" r="9"></circle>
+  </g>
+  ${HL}<path d="M86 46L54 14M114 46l32-32M100 44V16"></path></g>
+</svg>`,
+
+  uplight: `${OPEN}"Uplighting"${">"}
+  ${G}
+    <path d="M40 128h120"></path>
+    <rect x="62" y="104" width="34" height="22" rx="3"></rect>
+    <circle cx="79" cy="115" r="5"></circle>
+    <rect x="112" y="104" width="34" height="22" rx="3"></rect>
+    <circle cx="129" cy="115" r="5"></circle>
+  </g>
+  ${HL}<path d="M70 100L52 26M88 100l18-74M120 100l-18-74M138 100l18-74"></path></g>
+</svg>`,
+
+  'mirror-ball': `${OPEN}"Mirror ball effect light"${">"}
+  ${G}
+    <path d="M100 14v20"></path>
+    <circle cx="100" cy="74" r="40"></circle>
+    <path d="M60 74h80M100 34v80"></path>
+    <path d="M72 46a52 52 0 0 0 0 56M128 46a52 52 0 0 1 0 56"></path>
+    <path d="M64 58h72M64 90h72"></path>
+  </g>
+  ${HL}<path d="M24 36l10 6M176 36l-10 6M14 86l12 2M186 86l-12 2M40 124l10-8M160 124l-10-8M100 130v8"></path></g>
+</svg>`,
+
+  laser: `${OPEN}"Laser"${">"}
+  ${G}
+    <rect x="54" y="88" width="92" height="38" rx="3"></rect>
+    <circle cx="78" cy="107" r="7"></circle>
+    <circle cx="100" cy="107" r="7"></circle>
+    <circle cx="122" cy="107" r="7"></circle>
+  </g>
+  ${HL}<path d="M96 86L34 20M100 86V16M104 86l62-66M90 86L18 48M110 86l72-38"></path></g>
+</svg>`,
+
+  'festival-system': `${OPEN}"Festival system: subs, tops, moving lights and lasers"${">"}
+  ${G}
+    <rect x="10" y="92" width="40" height="38" rx="2"></rect>
+    <circle cx="30" cy="111" r="11"></circle>
+    <path d="M15 58h30l3 32H12z"></path>
+    <circle cx="29" cy="74" r="8"></circle>
+    <rect x="150" y="92" width="40" height="38" rx="2"></rect>
+    <circle cx="170" cy="111" r="11"></circle>
+    <path d="M155 58h30l3 32h-36z"></path>
+    <circle cx="171" cy="74" r="8"></circle>
+    <rect x="74" y="100" width="52" height="30" rx="3"></rect>
+    <circle cx="87" cy="115" r="7"></circle>
+    <circle cx="113" cy="115" r="7"></circle>
+    <path d="M62 46h22v18H62zM116 46h22v18h-22z"></path>
+    <path d="M73 64v10M127 64v10"></path>
+  </g>
+  ${HL}<path d="M68 44L44 16M78 44l6-28M122 44l-6-28M132 44l24-28M100 96V72"></path></g>
+</svg>`,
 };
 
 /* An unknown key must never break the build — the editor can add a package
