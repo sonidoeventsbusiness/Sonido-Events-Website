@@ -261,7 +261,9 @@ collections:
           - { name: introCopy, label: Opening paragraph, widget: text }
           - name: sections
             label: Sections
+            hint: "Leave empty until the text is final. Sections without a paragraph are not shown."
             widget: list
+            required: false
             summary: "{{heading}}"
             fields:
               - { name: heading, label: Heading, widget: string }
