@@ -304,6 +304,7 @@ ${body}
 
 ${footer(site, instaHref, instaHandle)}
 ${playerHtml ? '\n' + playerHtml + '\n' : ''}
+${analyticsTag(site)}
 </body>
 </html>
 `;
@@ -349,6 +350,15 @@ function eventRowsOrEmpty(upcoming) {
   <p>${lines(upcoming.emptyCopy || '')}</p>
   ${button(upcoming.emptyButtonLabel || 'Join the email list', '#signup', { arrow: ARROW_DOWN })}
 </div>`;
+}
+
+// Cloudflare Web Analytics: cookie-free visitor counts. Renders nothing
+// until site.analyticsToken is filled in, so the site never carries a
+// half-set-up tracker.
+function analyticsTag(site) {
+  const token = (site.analyticsToken || '').trim();
+  if (!/^[a-f0-9]{32}$/i.test(token)) return '';
+  return `\n<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${token}"}'></script>`;
 }
 
 module.exports = { esc, lines, button, ARROW, ARROW_DOWN, eventRow, eventRowsOrEmpty, layout, player, tile, signupSection, enquiryForm, enquirySection };

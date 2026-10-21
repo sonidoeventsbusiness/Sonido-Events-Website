@@ -29,5 +29,6 @@
       "name": "Event production",
       "description": "Full event production for parties and pop-up events in Melbourne. Sound, setup and the gear to run the night."
     }
-  ]
+  ],
+  "analyticsToken": "dc857b405a594b7cad52368104da607b"
 }
